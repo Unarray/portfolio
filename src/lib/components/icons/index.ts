@@ -1,0 +1,1 @@
+export { default as ExtralinkIcon } from "./extra-link.svelte";
