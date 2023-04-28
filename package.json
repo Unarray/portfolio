@@ -1,5 +1,5 @@
 {
-	"name": "myapp",
+	"name": "portfolio",
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
@@ -28,6 +28,9 @@
 		"extends": "@bluzzi"
 	},
 	"dependencies": {
-		"dayjs": "^1.11.7"
+		"clsx": "^1.2.1",
+		"dayjs": "^1.11.7",
+		"svelte-particles": "^2.9.3",
+		"tsparticles": "^2.9.3"
 	}
 }

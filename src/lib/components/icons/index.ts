@@ -1,1 +1,1 @@
-export { default as ExtralinkIcon } from "./extra-link.svelte";
+export { default as ExternalLink } from "./external-link.svelte";
