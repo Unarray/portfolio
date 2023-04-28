@@ -6,7 +6,7 @@ export const projects: Project[] = [
     name: "Tintify",
     description: "Librairie NPM permettant d'ajouter des effets et couleurs dans le terminal",
     date: {
-      start: date(7, 4, 2023)
+      start: date(15, 4, 2023)
     },
     info: {
       type: "openSource",

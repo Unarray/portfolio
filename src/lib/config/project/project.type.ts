@@ -14,6 +14,8 @@ export type Project = {
 }
 
 export type ProjectInfo = {
-  type: keyof typeof projectType;
+  type: ProjectType;
   link?: string;
 };
+
+export type ProjectType = keyof typeof projectType;
