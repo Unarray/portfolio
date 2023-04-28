@@ -7,7 +7,7 @@
 <Separator />
 
 <section>
-  <div class="pt-3 shrink-0 grid grid-cols-1 gap-2 sm:gap-3 items-center justify-start">
+  <div class="grid grid-cols-1 gap-2">
     {#each projects as project}
       <ProjectCard {project} />
     {/each}
