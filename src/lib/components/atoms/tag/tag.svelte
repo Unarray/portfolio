@@ -1,8 +1,15 @@
 <script lang="ts">
   import ExternalLink from "$lib/components/icons/external-link.svelte";
+  import clsx from "clsx";
 
-  export let label: string;
   export let link: string | null = null;
+  let clazz: string;
+  export {clazz as class};
+
+  const style = clsx(
+    "block bg-blue rounded uppercase px-2",
+    clazz
+  );
 
   const Tag = link ? "a" : "span";
 </script>
@@ -10,10 +17,10 @@
 <svelte:element 
   this={Tag}
   href={link}
-  class="block bg-blue rounded uppercase px-2"
+  class={style}
 >
   <p class="text-sm flex flex-row items-center gap-1">
-    {label}
+    <slot></slot>
     {#if link}
       <ExternalLink />
     {/if}
