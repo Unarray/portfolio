@@ -1,3 +1,3 @@
 <section>
-  <span class="my-4 block bg-white h-px w-full"></span>
+  <span class="my-4 block bg-separator h-0.5 w-full"></span>
 </section>
