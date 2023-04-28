@@ -1,4 +1,4 @@
-import { Config } from "tailwindcss";
+import type { Config } from "tailwindcss";
 
 export default {
   content: ['./src/**/*.{html,js,svelte,ts}'],
@@ -6,7 +6,10 @@ export default {
     colors: {
       "transparent": "transparent",
       "white": "#ffffff",
-      "black": "#000000",
+      "black": {
+        DEFAULT: "#000000",
+        1: "#101010"
+      },
       "blue": "#1d4ed8",
       "green": "#15803d",
       "gray": {
@@ -34,6 +37,10 @@ export default {
       "lg": { "max": "1023px" },
       "md": { "max": "767px" },
       "sm": { "max": "639px" }
+    },
+
+    backgroundImage: {
+      "separator": "linear-gradient(0.25turn, transparent, #fff, transparent)"
     },
 
     boxShadow: {
