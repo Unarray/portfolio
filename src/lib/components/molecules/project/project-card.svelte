@@ -17,7 +17,7 @@
   });
 </script>
 
-<div class="bg-gray/5 backdrop-blur-sm rounded shadow overflow-hidden">
+<div class="bg-white/2 backdrop-blur-sm rounded shadow overflow-hidden">
   <div class="p-4">
     <div class="flex flex-wrap justify-between">
       <div class="flex flex-wrap items-center gap-2">
