@@ -18,11 +18,12 @@
   this={Tag}
   href={link}
   class={style}
+  target="_blank"
 >
-  <p class="text-sm flex flex-row items-center gap-1">
+  <p class="text-sm flex flex-row items-center gap-1 ">
     <slot></slot>
     {#if link}
-      <ExternalLink />
+      <ExternalLink size="1.2em" />
     {/if}
   </p>
 </svelte:element>
