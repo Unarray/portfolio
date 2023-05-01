@@ -1,0 +1,1 @@
+export { default as SkillBall } from "./skill-ball.svelte";
