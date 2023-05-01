@@ -9,12 +9,12 @@
   };
 </script>
 
-<main class="mx-auto w-1/2 lg:w-3/4 sm:w-11/12 transition-width duration-500">
+<main class="mx-auto w-4/5 lg:w-11/12 sm:w-11/12 transition-width duration-500">
   <slot></slot>
 
   <Particles
     id="tsparticles"
-    url="/particles.json"
+    url="/config/particles.json"
     particlesInit={particlesInit}
   />
 </main>
