@@ -1,0 +1,1 @@
+export { technologies } from "./techno";
