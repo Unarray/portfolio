@@ -8,9 +8,13 @@ export default {
       "white": "#ffffff",
       "black": {
         DEFAULT: "#000000",
-        1: "#101010"
+        1: "#101010",
+        2: "#121212"
       },
-      "blue": "#1d4ed8",
+      "blue": {
+        DEFAULT: "#1d4ed8",
+        dark: "#001220"
+      },
       "green": "#15803d",
       "gray": {
         DEFAULT: "#888",
@@ -53,6 +57,12 @@ export default {
     },
 
     extend: {
+      opacity: {
+        '1': '0.01',
+        '2': '0.02',
+        '3': '0.03',
+        '4': '0.04',
+      },
       height: {
         "0.5": "1px"
       }
