@@ -8,8 +8,7 @@
   export let project: Project;
 
   const end = project.date.end ? project.date.end : dayJS();
-  const formattedStart = project.date.start.format("DD/MM/YYYY")
-  const formattedEnd = end.format("DD/MM/YYYY");
+  const formattedStart = project.date.start.format("DD/MM/YYYY");
 
   const tagStyle = clsx({
     "bg-blue": project.info.type === "pro",
@@ -19,7 +18,7 @@
 
 <div class="bg-white/2 backdrop-blur-sm rounded shadow overflow-hidden">
   <div class="p-4">
-    <div class="flex flex-wrap justify-between">
+    <div class="flex flex-wrap justify-between items-center">
       <div class="flex flex-wrap items-center gap-2">
         <p class="uppercase font-bold text-lg">{project.name}</p>
 
@@ -27,7 +26,7 @@
       </div>
 
       <p class="font-extralight text-gray text-base">
-        {formattedStart} - {project.date.end ? formattedEnd : "Aujourd'hui"} <span class="italic">({humanizeDateDiff(project.date.start, end)})</span>
+        {formattedStart} - <span class="italic">({humanizeDateDiff(project.date.start, end)})</span>
       </p>
     </div>
 
