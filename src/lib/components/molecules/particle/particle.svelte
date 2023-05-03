@@ -23,8 +23,6 @@
   let oldId = id;
 
   afterUpdate(async() => {
-    console.log("test");
-
     tsParticles.init();
 
     await particlesInit(tsParticles);
