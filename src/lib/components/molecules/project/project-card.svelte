@@ -1,14 +1,9 @@
 <script lang="ts">
   import { Tag } from "$lib/components/atoms/tag";
   import { projectType, type Project } from "$lib/config/project";
-  import { humanizeDateDiff } from "$lib/utils/date/difference";
-  import { dayJS } from "$lib/utils/day-js";
   import clsx from "clsx";
 
   export let project: Project;
-
-  const end = project.date.end ? project.date.end : dayJS();
-  const formattedStart = project.date.start.format("DD/MM/YYYY");
 
   const tagStyle = clsx({
     "bg-blue": project.info.type === "pro",
@@ -19,15 +14,9 @@
 <div class="bg-white/2 backdrop-blur-sm rounded shadow overflow-hidden">
   <div class="p-4">
     <div class="flex flex-wrap justify-between items-center">
-      <div class="flex flex-wrap items-center gap-2">
-        <p class="uppercase font-bold text-lg">{project.name}</p>
+      <p class="uppercase font-bold text-lg">{project.name}</p>
 
-        <Tag class={tagStyle} link={project.info.link}>{projectType[project.info.type]}</Tag>
-      </div>
-
-      <p class="font-extralight text-gray text-base">
-        {formattedStart} - <span class="italic">({humanizeDateDiff(project.date.start, end)})</span>
-      </p>
+      <Tag class={tagStyle} link={project.info.link}>{projectType[project.info.type]}</Tag>
     </div>
 
     <p class="text-base mb-1">{project.description}</p>
