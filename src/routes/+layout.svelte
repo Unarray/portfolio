@@ -1,24 +1,26 @@
 <script lang="ts">
   import "../app.css";
-  import Particles from "svelte-particles";
-  import { loadFull } from "tsparticles";
-  import type { ParticlesProps } from "svelte-particles";
+  import Cursor from "$lib/components/molecules/cursor/cursor.svelte";
+  import { Particle } from "$lib/components/molecules/particle";
+  import { config } from "$lib/config/particles";
+  import { onMount } from "svelte";
+  import { isOnMobile } from "$lib/utils/device";
 
-  let particlesInit: ParticlesProps["particlesInit"] = async(engine) => {
-    await loadFull(engine);
-  };
+  let isMobile: boolean;
+  onMount(() => {
+    isMobile = isOnMobile();
+  });
 </script>
 
 <svelte:head>
   <title>Ethan Monjal</title>
 </svelte:head>
 
-<main class="mx-auto w-4/5 lg:w-11/12 sm:w-11/12 transition-width duration-500">
-  <slot></slot>
+{#if !isMobile}
+  <Cursor />
+{/if}
 
-  <Particles
-    id="tsparticles"
-    url="/config/particles.json"
-    particlesInit={particlesInit}
-  />
+<main>
+  <Particle options={config} />
+  <slot/>
 </main>
