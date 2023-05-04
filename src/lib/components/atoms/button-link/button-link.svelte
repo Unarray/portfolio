@@ -3,10 +3,10 @@
 
   export let link: string;
   let clazz: string | null = null;
-  export {clazz as class};
+  export { clazz as class };
 
   const style = clsx(
-    "inline-block border-white hover:bg-white/10 border-2 rounded p-2",
+    "inline-block backdrop-blur-sm border-white hover:bg-white/10 border-2 rounded p-2",
     clazz
   );
 
@@ -15,4 +15,3 @@
 <a class={style} href={link}>
   <slot/>
 </a>
-
