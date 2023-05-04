@@ -1,23 +1,17 @@
 <script lang="ts">
+  import type { MouseEventHandler } from "svelte/elements";
   import { actionSize, defaultSize, externalOption, interactionSize, interactiveTag, internalOption, startingCoord } from "./cursor.const";
   import { isChildOf } from "./cursor.util";
-  import clsx from "clsx";
   import { spring } from "svelte/motion";
   import { fade } from "svelte/transition";
 
   let isVisible = false;
-  $: style = clsx(
-    "fixed w-full h-full z-50 pointer-events-none text-white",
-    {
-      "hidden": !isVisible
-    }
-  );
 
   const size = spring(defaultSize);
   const coordsExternal = spring(startingCoord, externalOption);
   const coordsInternal = spring(startingCoord, internalOption);
 
-  const mouseMove = (event: MouseEvent): void => {
+  const mouseMove: MouseEventHandler<HTMLElement> = (event) => {
     const newCoords = { x: event.clientX, y: event.clientY };
 
     void coordsExternal.set(newCoords);
@@ -26,10 +20,8 @@
     });
   };
 
-  const mouseOver = (event: MouseEvent): void => {
-    const target = event.target;
-
-    if (!(target instanceof HTMLElement)) return;
+  const mouseOver: MouseEventHandler<HTMLElement> = (event) => {
+    const target = event.currentTarget;
 
     if (isChildOf(target, interactiveTag)) {
       void size.set(interactionSize);
@@ -52,7 +44,7 @@
 
 {#if isVisible}
   <svg
-    class={style}
+    class="fixed w-full h-full z-50 pointer-events-none text-white"
     out:fade
   >
     <circle cx={$coordsExternal.x} cy={$coordsExternal.y} r={$size} stroke="currentColor" stroke-width="1" fill-opacity="0"/>
