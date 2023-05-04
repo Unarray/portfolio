@@ -4,7 +4,19 @@
 </script>
 
 <section id="projects">
-  <div class="grid grid-cols-1 gap-2">
+  <div class="mx-auto grid grid-cols-1 w-fit gap-2">
+    {#each projects as project}
+      <ProjectCard {project} />
+    {/each}
+    {#each projects as project}
+      <ProjectCard {project} />
+    {/each}
+    {#each projects as project}
+      <ProjectCard {project} />
+    {/each}
+    {#each projects as project}
+      <ProjectCard {project} />
+    {/each}
     {#each projects as project}
       <ProjectCard {project} />
     {/each}

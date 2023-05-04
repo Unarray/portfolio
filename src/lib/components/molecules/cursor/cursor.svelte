@@ -5,6 +5,8 @@
   import { spring } from "svelte/motion";
   import { fade } from "svelte/transition";
 
+  import {} from "$env/static/public";
+
   let isVisible = false;
 
   const size = spring(defaultSize);
@@ -15,13 +17,13 @@
     const newCoords = { x: event.clientX, y: event.clientY };
 
     void coordsExternal.set(newCoords);
-    void coordsInternal.set(newCoords, {
-      hard: true
-    });
+    void coordsInternal.set(newCoords);
   };
 
   const mouseOver: MouseEventHandler<HTMLElement> = (event) => {
-    const target = event.currentTarget;
+    const target = event.target;
+
+    if (!(target instanceof HTMLElement)) return;
 
     if (isChildOf(target, interactiveTag)) {
       void size.set(interactionSize);

@@ -1,12 +1,12 @@
 <script lang="ts">
-  import { SkillBall } from "$lib/components/molecules/skill";
+import { SkillBall } from "$lib/components/molecules/skill";
   import { technologies } from "$lib/config/techno";
 </script>
 
-<section id="projects">
-  <div class="flex flex-1 items-center justify-center flex-wrap">
+<section id="skills" class="box-border">
+  <div class="flex flex-1 items-center justify-center flex-wrap w-3/5 lg:w-full mx-auto">
     {#each technologies as techno}
-      <SkillBall class="md:w-20 md:h-20" imgURL={techno.iconURL} />
+      <SkillBall imgURL={techno.iconURL} />
     {/each}
   </div>
 </section>

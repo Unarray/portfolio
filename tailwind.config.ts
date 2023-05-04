@@ -19,7 +19,8 @@ export default {
       "gray": {
         DEFAULT: "#888",
         1: "#111"
-      }
+      },
+      "red": "rgb(239 68 68 / var(--tw-bg-opacity))"
     },
     
     fontSize: {
@@ -33,7 +34,7 @@ export default {
     },
 
     fontFamily: {
-      "sans": ["Ubuntu", "sans-serif"]
+      "sans": ["JetBrains Mono", "sans-serif"]
     },
 
     screens: {

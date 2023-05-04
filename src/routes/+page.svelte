@@ -1,21 +1,25 @@
 <script lang="ts">
   import Separator from "$lib/components/atoms/separator.svelte";
+  import { default as HeaderSection } from "./header.section.svelte";
   import { default as ProjectSection } from "./projects.section.svelte";
   import { default as SkillsSection } from "./skills.section.svelte";
-  import { ButtonLink } from "$lib/components/atoms/button-link";
-  import { ChevronUp } from "$lib/components/icons";
+
+  const style = "mx-auto w-4/5 lg:w-11/12 sm:w-11/12 transition-width duration-500";
 </script>
 
-<section class="my-5">
-  <ButtonLink link="/#skills">Skills</ButtonLink>
-  <ButtonLink link="/#projects">Projects</ButtonLink>
-  <ButtonLink link="/#" class="fixed bottom-5 right-5 z-10 rounded-full"><ChevronUp size="1.5rem"/></ButtonLink>
-</section>
 
-<SkillsSection />
+<!-- <SkillsSection /> -->
 
-<Separator />
+<HeaderSection />
 
-<ProjectSection />
+<div class={style}>
+  <Separator />
 
-<Separator />
+  <SkillsSection />
+
+  <Separator />
+
+  <ProjectSection />
+
+  <Separator />
+</div>

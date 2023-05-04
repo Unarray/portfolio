@@ -1,3 +1,3 @@
 export const isOnMobile = (): boolean => {
-  return (/Android|Mobi/i).test(navigator.userAgent);
+  return (/Android|webOS|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent);
 };
