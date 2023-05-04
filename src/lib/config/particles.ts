@@ -3,7 +3,8 @@ import type { ISourceOptions } from "tsparticles-engine";
 /* eslint camelcase: "off" */
 export const config: ISourceOptions = {
   fullScreen: {
-    enable: false
+    enable: true,
+    zIndex: -10
   },
   particles: {
     number: {
@@ -46,7 +47,7 @@ export const config: ISourceOptions = {
       direction: "none",
       random: true,
       straight: false,
-      out_mode: "bounce"
+      out_mode: "out"
     }
   },
   "retina_detect": true
