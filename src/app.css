@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  *, *:hover {
+    cursor: none;
+  }
+
+  /* 
+    Need to be remove in future
+    At the moment i don't know why on the edges of the button, the pointer cursor show
+    */
+  button {
+    cursor: none;
+  }
+}
