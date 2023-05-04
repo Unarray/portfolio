@@ -4,7 +4,7 @@
 
   export let link: string | null = null;
   let clazz: string;
-  export {clazz as class};
+  export { clazz as class };
 
   const style = clsx(
     "block bg-blue rounded uppercase px-2",
@@ -14,7 +14,7 @@
   const Tag = link ? "a" : "span";
 </script>
 
-<svelte:element 
+<svelte:element
   this={Tag}
   href={link}
   class={style}
