@@ -5,9 +5,7 @@
   import { spring } from "svelte/motion";
   import { fade } from "svelte/transition";
 
-  import {} from "$env/static/public";
-
-  let isVisible = false;
+  let isVisible = true;
 
   const size = spring(defaultSize);
   const coordsExternal = spring(startingCoord, externalOption);
