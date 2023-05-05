@@ -46,7 +46,7 @@
 
 {#if isVisible}
   <svg
-    class="fixed w-full h-full z-50 pointer-events-none text-white"
+    class="fixed w-full h-full z-50 pointer-events-none mix-blend-difference"
     out:fade
   >
     <circle cx={$coordsExternal.x} cy={$coordsExternal.y} r={$size} stroke="currentColor" stroke-width="1" fill-opacity="0"/>
