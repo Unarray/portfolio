@@ -13,11 +13,9 @@
 <HeaderSection />
 
 <div class={style}>
-  <Separator />
+  <Separator class="mb-20" />
 
   <SkillsSection />
-
-  <Separator />
 
   <ProjectSection />
 
