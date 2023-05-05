@@ -7,14 +7,13 @@
   import { isOnMobile } from "$lib/utils/device";
   import ScrollToTop from "$lib/components/molecules/scroll-to-top/scroll-to-top.svelte";
   import { PUBLIC_PREVIEW } from "$env/static/public";
-  import { fly } from "svelte/transition";
+  import { Banner } from "$lib/components/molecules/notification/banner";
 
   let isMobile: boolean;
   onMount(() => {
     isMobile = isOnMobile();
   });
 
-  let bannerVisible = true;
 </script>
 
 <svelte:head>
@@ -27,15 +26,11 @@
 
 <ScrollToTop />
 
-{#if Number(PUBLIC_PREVIEW) && bannerVisible}
-  <div class="w-full text-center bg-red p-2" transition:fly={{ y: "-4rem", duration: 700 }}>
-    Vous êtes actuellement sur la version de développement. Certaines fonctionnalités peuvent ne pas fonctionner correctement.
-    <button on:click={() => bannerVisible = false} class="font-bold">
-      X
-    </button>
-  </div>
+{#if Number(PUBLIC_PREVIEW)}
+  <Banner
+    message="Vous êtes actuellement sur la version de développement. Certaines fonctionnalités peuvent ne pas fonctionner correctement."
+  />
 {/if}
-
 
 <main>
   <Particle options={config} />
