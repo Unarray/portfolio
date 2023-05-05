@@ -15,7 +15,9 @@
     const newCoords = { x: event.clientX, y: event.clientY };
 
     void coordsExternal.set(newCoords);
-    void coordsInternal.set(newCoords);
+    void coordsInternal.set(newCoords, {
+      hard: true
+    });
   };
 
   const mouseOver: MouseEventHandler<HTMLElement> = (event) => {
