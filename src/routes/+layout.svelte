@@ -20,6 +20,7 @@
   <title>Ethan Monjal</title>
 </svelte:head>
 
+
 {#if !isMobile}
   <Cursor />
 {/if}
@@ -28,11 +29,12 @@
 
 {#if Number(PUBLIC_PREVIEW)}
   <Banner
-    message="Vous êtes actuellement sur la version de développement. Certaines fonctionnalités peuvent ne pas fonctionner correctement."
+    message="La version que vous consultez est en développement, certaines fonctionnalités peuvent ne pas fonctionner correctement."
   />
 {/if}
 
+<Particle options={config} />
+
 <main>
-  <Particle options={config} />
   <slot/>
 </main>
