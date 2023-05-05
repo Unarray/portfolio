@@ -2,6 +2,7 @@
   import clsx from "clsx";
 
   export let link: string;
+  export let blankTarget = false;
   let clazz: string | null = null;
   export { clazz as class };
 
@@ -12,6 +13,6 @@
 
 </script>
 
-<a class={style} href={link}>
+<a class={style} target={blankTarget ? "_blank" : "_self"} href={link}>
   <slot/>
 </a>
