@@ -1,7 +1,9 @@
 <script lang="ts">
-    import { ScrollToId } from "$lib/components/molecules/scroll-to-id";
+  import { ButtonLink } from "$lib/components/atoms/button-link";
+  import { Download } from "$lib/components/icons";
+  import { Github } from "$lib/components/icons/brand";
+  import { ScrollToId } from "$lib/components/molecules/scroll-to-id";
 </script>
-
 
 <section id="presentation">
   <header class="min-h-screen">
@@ -23,7 +25,18 @@
             Dicta amet quos sint unde sed inventore laudantium magni reiciendis pariatur voluptatem laboriosam aspernatur soluta,
             suscipit voluptate cumque commodi mollitia nulla quia?
           </p>
+          <div class="mt-5 flex items-center justify-start gap-4 flex-wrap">
+            <ButtonLink link="/cv.pdf" blankTarget={true} class="w-fit flex justify-around items-center gap-2">
+              <Download size="1.2em"/>
+              Télécharger CV
+            </ButtonLink>
+            <ButtonLink link="https://github.com/Unarray" blankTarget={true} class="w-fit flex justify-around items-center gap-2">
+              <Github size="1.2em"/>
+              Github
+            </ButtonLink>
+          </div>
         </div>
+
         <img src="/images/me.png" alt="MONJAL Ethan" class="w-1/5 lg:w-2/4 rounded-full">
       </div>
     </div>
