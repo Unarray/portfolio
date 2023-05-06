@@ -13,7 +13,6 @@
 <HeaderSection />
 
 <div class={style}>
-  <Separator class="mb-20" />
 
   <SkillsSection />
 
