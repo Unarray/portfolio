@@ -2,24 +2,19 @@
   import { ButtonLink } from "$lib/components/atoms/button-link";
   import { Download } from "$lib/components/icons";
   import { Github } from "$lib/components/icons/brand";
-  import { BurgerButton } from "$lib/components/molecules/burger-menu";
-  import { ScrollToId } from "$lib/components/molecules/scroll-to-id";
-  import { slide } from "svelte/transition";
-
-  let open: boolean;
-  let width: number;
+  import { Navbar } from "$lib/components/layouts/navbar";
 </script>
-
-<svelte:window bind:innerWidth={width} />
 
 <section id="presentation">
   <header class="min-h-screen">
 
-    <nav class="absolute w-full">
+    <Navbar />
+
+    <!-- <nav class="absolute w-full">
       {#if width < 1024}
 
         <div class="w-full my-5 px-10 flex justify-end">
-          <BurgerButton bind:open />
+          <BurgerButton size="2rem" bind:open />
         </div>
 
         {#if open}
@@ -36,7 +31,7 @@
           </div>
         </div>
       {/if}
-    </nav>
+    </nav> -->
 
 
     <div class="min-h-screen flex justify-center items-center">

@@ -7,13 +7,11 @@
   const style = "mx-auto w-4/5 lg:w-11/12 sm:w-11/12 transition-width duration-500";
 </script>
 
-
 <!-- <SkillsSection /> -->
 
 <HeaderSection />
 
 <div class={style}>
-
   <SkillsSection />
 
   <ProjectSection />

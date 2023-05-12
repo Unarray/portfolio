@@ -4,7 +4,7 @@ import type { ISourceOptions } from "tsparticles-engine";
 export const config: ISourceOptions = {
   fullScreen: {
     enable: true,
-    zIndex: -10
+    zIndex: -50
   },
   particles: {
     number: {
