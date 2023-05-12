@@ -4,7 +4,8 @@
   export let query: string;
 
   let mediaQueryList: MediaQueryList;
-  let matches = false;
+  /** `-1` if media query isn't loaded */
+  let matches: boolean | -1 = -1;
 
   onMount(() => {
     mediaQueryList = window.matchMedia(query);
