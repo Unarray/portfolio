@@ -3,7 +3,7 @@ import type { ISourceOptions } from "tsparticles-engine";
 /* eslint camelcase: "off" */
 export const config: ISourceOptions = {
   fullScreen: {
-    enable: false,
+    enable: true,
     zIndex: -50
   },
   particles: {

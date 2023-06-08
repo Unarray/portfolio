@@ -3,14 +3,10 @@
   import { Download } from "$lib/components/icons";
   import { Github } from "$lib/components/icons/brand";
   import { Navbar } from "$lib/components/layouts/navbar";
-    import { Particle } from "$lib/components/molecules/particle";
-    import { config } from "$lib/config/particles";
 </script>
 
 <section id="presentation">
   <header class="min-h-screen">
-    <Particle options={config} class="absolute w-full h-full -z-10" />
-
     <Navbar />
 
     <div class="min-h-screen flex justify-center items-center">

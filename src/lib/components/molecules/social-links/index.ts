@@ -1,1 +1,0 @@
-export { default as SocialLinks } from "./socials-links.svelte";
