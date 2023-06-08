@@ -22,7 +22,7 @@ export default {
       },
       "red": "rgb(239 68 68 / var(--tw-bg-opacity))"
     },
-    
+
     fontSize: {
       "sm": "0.8rem",
       "base": "1rem",
@@ -46,11 +46,14 @@ export default {
     },
 
     backgroundImage: {
-      "separator": "linear-gradient(0.25turn, transparent, #fff, transparent)"
+      "separator": "linear-gradient(0.25turn, transparent, #fff, transparent)",
+      "header": "radial-gradient(ellipse at bottom right, #0b1829 0%, #080808 60%)",
+      "header2": "radial-gradient(ellipse at top, #e66465, transparent),radial-gradient(ellipse at bottom, #4d9f0c, transparent)"
     },
 
     boxShadow: {
-      DEFAULT: "0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)"
+      DEFAULT: "0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)",
+      xl: "0 0px 25px 0 rgb(0 0 0)"
     },
 
     borderRadius: {

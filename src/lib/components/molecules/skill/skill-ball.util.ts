@@ -22,5 +22,6 @@ export const getDecal = (origine: Mesh, texture: Texture, size: number): Mesh =>
     polygonOffsetFactor: -1
   });
 
+
   return new Mesh(decalGeometry, decalMaterial);
 };
