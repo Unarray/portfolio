@@ -1,8 +1,6 @@
 <script lang="ts">
   import "../app.css";
   import Cursor from "$lib/components/molecules/cursor/cursor.svelte";
-  import { Particle } from "$lib/components/molecules/particle";
-  import { config } from "$lib/config/particles";
   import { onMount } from "svelte";
   import { isOnMobile } from "$lib/utils/device";
   import ScrollToTop from "$lib/components/molecules/scroll-to-top/scroll-to-top.svelte";
@@ -32,8 +30,6 @@
     message="La version que vous consultez est en développement, certaines fonctionnalités peuvent ne pas fonctionner correctement."
   />
 {/if}
-
-<Particle options={config} />
 
 <main>
   <slot/>
