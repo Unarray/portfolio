@@ -3,6 +3,26 @@ import type { Project } from "./project.type";
 
 export const projects: Project[] = [
   {
+    name: "MediaTek86 - Atelier pro CNED",
+    description: "Application windows permettant de gérer le personnel d'une médiathèque et les absences relatives aux personnels",
+    date: {
+      start: date(8, 6, 2023)
+    },
+    info: {
+      type: "openSource",
+      link: "https://github.com/Unarray/MediaTek86"
+    },
+    skills: [
+      "Création d'une application Windows",
+      "Utilisation du design pattern MVC",
+      "Création d'interface faciles a utiliser et comprendre",
+      "Communication avec une base de données MySQL",
+      "Génération de documentation",
+      "Création de divers fonctions afin de manipuler les valeurs RGB (gradient linéaires, arc-en-ciel, etc...)"
+    ],
+    techno: ["C#", "Windows Form", "MySQL", "Sandcastle", "Github"]
+  },
+  {
     name: "Tintify",
     description: "Librairie NPM permettant d'ajouter des effets et couleurs dans le terminal",
     date: {
