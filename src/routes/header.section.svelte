@@ -11,7 +11,7 @@
   <header class="min-h-screen">
     <Particle options={config} class="absolute w-full h-full -z-10" />
 
-    <Navbar />
+    <Navbar links={[]} socials={[]} />
 
     <div class="min-h-screen flex justify-center items-center">
       <div class="flex items-center justify-evenly lg:justify-center lg:flex-col gap-y-10">
