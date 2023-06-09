@@ -17,8 +17,7 @@ export const projects: Project[] = [
       "Utilisation du design pattern MVC",
       "Création d'interface faciles a utiliser et comprendre",
       "Communication avec une base de données MySQL",
-      "Génération de documentation",
-      "Création de divers fonctions afin de manipuler les valeurs RGB (gradient linéaires, arc-en-ciel, etc...)"
+      "Génération de documentation"
     ],
     techno: ["C#", "Windows Form", "MySQL", "Sandcastle", "Github"]
   },
