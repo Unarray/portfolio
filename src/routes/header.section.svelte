@@ -3,13 +3,22 @@
   import { Download } from "$lib/components/icons";
   import { Github } from "$lib/components/icons/brand";
   import { Navbar } from "$lib/components/layouts/navbar";
-    import { Particle } from "$lib/components/molecules/particle";
-    import { config } from "$lib/config/particles";
+  import { config } from "$lib/config/particles";
+  import Particles, { type ParticlesProps } from "svelte-particles";
+  import { loadSlim } from "tsparticles-slim";
+
+  const particlesInit: ParticlesProps["particlesInit"] = async(engine) => {
+    await loadSlim(engine);
+  };
 </script>
 
 <section id="presentation">
   <header class="min-h-screen">
-    <Particle options={config} class="absolute w-full h-full -z-10" />
+    <Particles
+      options={config}
+      class="absolute w-full h-full -z-10"
+      particlesInit={particlesInit}
+    />
 
     <Navbar links={[]} socials={[]} />
 
@@ -36,7 +45,6 @@
           </div>
         </div>
 
-        
 
         <img src="/images/me.png" alt="MONJAL Ethan" class="w-1/5 lg:w-2/4 rounded-full">
       </div>
