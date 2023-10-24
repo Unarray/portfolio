@@ -46,7 +46,7 @@
         </div>
 
 
-        <img src="/images/me.png" alt="MONJAL Ethan" class="w-1/5 lg:w-2/4 rounded-full">
+        <img src="/images/me.webp" alt="MONJAL Ethan" class="w-1/5 lg:w-2/4 rounded-full">
       </div>
     </div>
 
