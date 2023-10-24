@@ -17,3 +17,26 @@
     cursor: none;
   }
 }
+
+@layer utilities {
+
+  .animated-gradient {
+    background: radial-gradient(ellipse at bottom right, #00ff1a, transparent),
+      radial-gradient(ellipse at top left, #ff0077, transparent);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+  }
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+}

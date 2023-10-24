@@ -12,12 +12,6 @@ export const externalOption: SpringOption = {
   precision: 1
 };
 
-export const internalOption: SpringOption = {
-  stiffness: 0.2,
-  damping: 0.35,
-  precision: 1
-};
-
 export const interactiveTag: TagList = [
   "a",
   "button"

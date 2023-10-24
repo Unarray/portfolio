@@ -13,8 +13,8 @@
   let open: boolean;
 
   const mobileNavbarContainerStyle = clsx(
-    "z-40 fixed right-0 top-0 w-full",
-    "px-16 py-5 bg-header rounded-l flex flex-col items-center justify-evenly gap-3 shadow-xl box"
+    "z-40 fixed right-0 top-0 w-full bg-black-2/95",
+    "py-5 bg-header rounded-l flex flex-col items-center justify-evenly gap-3 shadow-xl box"
   );
 </script>
 
@@ -41,9 +41,9 @@
           class={mobileNavbarContainerStyle}
           transition:slide
         >
-          <div class="flex flex-col items-center justify-center gap-3 mt-auto">
-            <ScrollToId id="#skills" pourcent={10} >Tecnologies</ScrollToId>
-            <ScrollToId id="#projects" pourcent={10} >Projets</ScrollToId>
+          <div class="flex flex-col items-center justify-center gap-3 mt-auto w-1/2 sm:px-16 sm:w-full">
+            <ScrollToId id="#skills" pourcent={10} class="w-full">Tecnologies</ScrollToId>
+            <ScrollToId id="#projects" pourcent={10} class="w-full" >Projets</ScrollToId>
           </div>
           <div class="flex items-center justify-center gap-3 mt-auto">
             <ScrollToId id="#skills" pourcent={10} >Tecnologies</ScrollToId>
