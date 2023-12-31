@@ -22,7 +22,7 @@ export default {
       },
       "red": "rgb(239 68 68 / var(--tw-bg-opacity))"
     },
-    
+
     fontSize: {
       "sm": "0.8rem",
       "base": "1rem",
