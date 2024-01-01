@@ -17,7 +17,6 @@
   } from "three";
   import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
   import { DecalGeometry } from "three/examples/jsm/geometries/DecalGeometry.js";
-  import Stats from "three/addons/libs/stats.module.js";
 
   class SkillScene extends Scene {
 
@@ -90,9 +89,6 @@
 
 
   onMount(() => {
-    const stats = new Stats();
-    document.body.appendChild(stats.dom);
-
     const scenes: SkillScene[] = [];
 
     for (const technologie of technologies) {
@@ -100,7 +96,6 @@
       div.classList.add("w-32", "h-32");
 
       canvasContainer.appendChild(div);
-
       scenes.push(createScene(div, technologie.iconURL));
     }
 
@@ -134,7 +129,6 @@
         renderer.setScissor(left, bottom, width, height);
         renderer.render(scene, scene.camera);
       }
-      stats.update();
     };
 
     animate(0);
