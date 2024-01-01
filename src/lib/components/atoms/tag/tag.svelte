@@ -1,5 +1,5 @@
 <script lang="ts">
-  import ExternalLink from "$lib/components/icons/external-link.svelte";
+  import { IconExternalLink } from "@tabler/icons-svelte";
   import clsx from "clsx";
 
   export let link: string | null = null;
@@ -23,7 +23,7 @@
   <p class="text-sm flex flex-row items-center gap-1 ">
     <slot></slot>
     {#if link}
-      <ExternalLink size="1.2em" />
+      <IconExternalLink class="h-4" />
     {/if}
   </p>
 </svelte:element>

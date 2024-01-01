@@ -1,18 +1,16 @@
 <script lang="ts">
-  import { Cross, Menu } from "$lib/components/icons";
-  import type { Size } from "$lib/components/icons";
+  import { IconMenu2, IconX } from "@tabler/icons-svelte";
 
   export let open = false;
-  export let size: Size;
   let clazz = "";
   export { clazz as class };
 
-  $: tag = open ? Cross : Menu;
+  $: tag = open ? IconX : IconMenu2;
 </script>
 
 <button
   class={clazz}
   aria-label="Hamburger menu"
   on:click={() => open = !open}>
-  <svelte:component this={tag} size={size} />
+  <svelte:component this={tag} class={clazz} />
 </button>

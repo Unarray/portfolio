@@ -1,7 +1,6 @@
 <script lang="ts">
   import { ButtonLink } from "$lib/components/atoms/button-link";
-  import { Download } from "$lib/components/icons";
-  import { Github } from "$lib/components/icons/brand";
+  import { IconBrandGithub, IconDownload } from "@tabler/icons-svelte";
   import { Navbar } from "$lib/components/layouts/navbar";
   import { config } from "$lib/config/ts-particles";
   import Particles, { particlesInit } from "@tsparticles/svelte";
@@ -37,11 +36,11 @@
           </p>
           <div class="mt-5 flex items-center justify-start gap-4 flex-wrap">
             <ButtonLink link="/cv.pdf" blankTarget={true} class="w-fit flex justify-around items-center gap-2">
-              <Download size="1.2em"/>
+              <IconDownload class="h-5"/>
               Télécharger CV
             </ButtonLink>
             <ButtonLink link="https://github.com/Unarray" blankTarget={true} class="w-fit flex justify-around items-center gap-2">
-              <Github size="1.2em"/>
+              <IconBrandGithub class="h-5" />
               Github
             </ButtonLink>
           </div>

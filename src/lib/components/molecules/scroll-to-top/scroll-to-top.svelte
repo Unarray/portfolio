@@ -1,7 +1,7 @@
 <script lang="ts">
   import { fly } from "svelte/transition";
-  import { ChevronUp } from "$lib/components/icons";
   import clsx from "clsx";
+  import { IconChevronUp } from "@tabler/icons-svelte";
 
   let clazz = "";
   export { clazz as class };
@@ -25,6 +25,6 @@
     class="{style}"
     transition:fly={{ y: "4rem", duration: 700 }}
   >
-    <ChevronUp size="1.5rem"/>
+    <IconChevronUp class="h-6"/>
   </button>
 {/if}

@@ -52,7 +52,7 @@
         </div>
       {/if}
 
-      <BurgerButton size="2rem" bind:open class="z-40 fixed top-4 right-4" />
+      <BurgerButton bind:open class="z-40 fixed top-4 right-4 h-8 w-auto" />
     </nav>
 
   {/if}
