@@ -3,13 +3,16 @@
   import { Download } from "$lib/components/icons";
   import { Github } from "$lib/components/icons/brand";
   import { Navbar } from "$lib/components/layouts/navbar";
-  import { config } from "$lib/config/particles";
-  import Particles, { type ParticlesProps } from "svelte-particles";
-  import { loadSlim } from "tsparticles-slim";
+  import { config } from "$lib/config/ts-particles";
+  import Particles, { particlesInit } from "@tsparticles/svelte";
+  import { loadSlim } from "@tsparticles/slim";
+  import { onMount } from "svelte";
 
-  const particlesInit: ParticlesProps["particlesInit"] = async(engine) => {
-    await loadSlim(engine);
-  };
+  onMount(() => {
+    void particlesInit(async(engine) => {
+      await loadSlim(engine);
+    });
+  });
 </script>
 
 <section id="presentation">
@@ -17,7 +20,6 @@
     <Particles
       options={config}
       class="absolute w-full h-full -z-10"
-      particlesInit={particlesInit}
     />
 
     <Navbar links={[]} socials={[]} />

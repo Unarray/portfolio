@@ -1,7 +1,6 @@
-import type { ISourceOptions } from "tsparticles-engine";
+import type Particles from "@tsparticles/svelte";
 
-/* eslint camelcase: "off" */
-export const config: ISourceOptions = {
+export const config: Particles["options"] = {
   fullScreen: {
     enable: false,
     zIndex: -50
@@ -11,27 +10,30 @@ export const config: ISourceOptions = {
       value: 50,
       density: {
         enable: true,
-        value_area: 800
+        width: 800
       }
     },
     opacity: {
-      value: 0.2,
-      random: false,
-      anim: {
+      value: {
+        max: 0.2,
+        min: 0.1
+      },
+      animation: {
         enable: false,
         speed: 0.1,
-        opacity_min: 0.1,
         sync: false
       }
     },
     size: {
-      value: 3,
-      random: true
+      value: {
+        max: 3,
+        min: 2
+      }
     },
     color: {
       value: "#fff"
     },
-    line_linked: {
+    links: {
       enable: true,
       distance: 150,
       color: "#fff",
@@ -47,8 +49,8 @@ export const config: ISourceOptions = {
       direction: "none",
       random: true,
       straight: false,
-      out_mode: "out"
+      outModes: "out"
     }
   },
-  "retina_detect": true
+  detectRetina: true
 };
