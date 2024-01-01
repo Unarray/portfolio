@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Separator from "$lib/components/atoms/separator.svelte";
+  import { Separator } from "$lib/components/atoms/separator";
   import HeaderSection from "./header.section.svelte";
   import ProjectSection from "./projects.section.svelte";
   import SkillsSection from "./skills.section.svelte";
