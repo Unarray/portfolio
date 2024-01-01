@@ -14,7 +14,7 @@ import { Scene } from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { DecalGeometry } from "three/examples/jsm/geometries/DecalGeometry.js";
 
-export class SkillScene extends Scene {
+export class SkillBallScene extends Scene {
 
   public readonly element: HTMLDivElement;
 
@@ -31,7 +31,7 @@ export class SkillScene extends Scene {
 
 }
 
-export const createBallScene = (element: HTMLDivElement, imageURL: string): SkillScene => {
+export const createBallScene = (element: HTMLDivElement, imageURL: string): SkillBallScene => {
   // Setting up scene
   const camera = new PerspectiveCamera(24);
   camera.position.set(0, 0, 6);
@@ -42,7 +42,7 @@ export const createBallScene = (element: HTMLDivElement, imageURL: string): Skil
   controls.enableDamping = true;
   controls.dampingFactor = 0.04;
 
-  const scene = new SkillScene(element, camera, controls);
+  const scene = new SkillBallScene(element, camera, controls);
 
   // Create "ball" geometry
   const geometry = new IcosahedronGeometry(1, 1);

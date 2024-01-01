@@ -1,11 +1,26 @@
-import { createBallScene, type SkillScene } from "./skills.three";
+import type { SkillBallScene } from "./skills.three";
+import { createBallScene } from "./skills.three";
 import { technologies } from "$lib/config/techno";
 import { Clock, MathUtils, WebGLRenderer } from "three";
 import { isDomElementVisible } from "./skills.util";
 import { floatingAnimationConfig } from "./skills.const";
+import type { SceneInfo } from "./skills.type";
+
+// TODO: See how can we improve this code.
+// - What can we move to `SkillBallScene` class
+// - How can we improve floating animation (ie: code location)
+// - How can we improve auto-center orbit control (ie: move it to `SkillBallScene`, have an OOP approach)
 
 export const useSkillsRenderer = (canvas: HTMLCanvasElement, canvasContainer: HTMLDivElement): void => {
-  const scenes: {seed: number; scene: SkillScene}[] = [];
+  const scenes: SceneInfo[] = [];
+
+  const onStart = (scene: SkillBallScene, index: number): void => {
+    scene.control.minAzimuthAngle = -Infinity;
+    scene.control.maxAzimuthAngle = Infinity;
+    scene.control.minPolarAngle = 0;
+    scene.control.maxPolarAngle = Math.PI;
+    scenes[index].isReseting = false;
+  };
 
   // Generate skills containers elements
   for (const technologie of technologies) {
@@ -13,9 +28,31 @@ export const useSkillsRenderer = (canvas: HTMLCanvasElement, canvasContainer: HT
     div.classList.add("w-32", "h-32");
 
     canvasContainer.appendChild(div);
-    scenes.push({
+
+    const scene = createBallScene(div, technologie.iconURL);
+    const index = scenes.push({
+      isReseting: false,
       seed: Math.random() * 10000,
-      scene: createBallScene(div, technologie.iconURL)
+      scene: scene
+    }) - 1;
+
+    let timeoutID = 0;
+    scene.control.addEventListener("end", () => {
+      timeoutID = setTimeout(
+        () => {
+          timeoutID = 0;
+          scenes[index].isReseting = true;
+        },
+        1000 * 3
+      );
+    });
+
+    scene.control.addEventListener("start", () => {
+      if (timeoutID) {
+        clearTimeout(timeoutID);
+        timeoutID = 0;
+      }
+      onStart(scenes[index].scene, index);
     });
   }
 
@@ -36,7 +73,30 @@ export const useSkillsRenderer = (canvas: HTMLCanvasElement, canvasContainer: HT
     renderer.clear();
     renderer.setScissorTest(true);
 
-    for (const { seed, scene } of scenes) {
+    for (const [index, { seed, isReseting,  scene }] of scenes.entries()) {
+
+      if (isReseting) {
+        // get current angles
+
+        let alpha = scene.control.getAzimuthalAngle();
+        let beta = scene.control.getPolarAngle() - Math.PI / 2;
+
+        // if they are close to the reset values, just set these values
+        if (Math.abs(alpha) < 0.001) alpha = 0;
+        if (Math.abs(beta) < 0.001) beta = 0;
+
+        // smooth change using manual lerp
+        scene.control.minAzimuthAngle = (995 / 1000) * alpha;
+        scene.control.maxAzimuthAngle = scene.control.minAzimuthAngle;
+
+        scene.control.minPolarAngle = Math.PI / 2 + (995 / 1000) * beta;
+        scene.control.maxPolarAngle = scene.control.minPolarAngle;
+
+        // if the reset values are reached, exit smooth reset
+        if (alpha == 0 && beta == 0) onStart(scene, index);
+      }
+
+
       scene.control.update();
 
       // Floating animation
