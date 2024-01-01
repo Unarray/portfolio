@@ -10,6 +10,7 @@ import type { SceneInfo } from "./skills.type";
 // - What can we move to `SkillBallScene` class
 // - How can we improve floating animation (ie: code location)
 // - How can we improve auto-center orbit control (ie: move it to `SkillBallScene`, have an OOP approach)
+// - Skills are flipping to the other side when they are on edge. Is the floating effect the cause?
 
 export const useSkillsRenderer = (canvas: HTMLCanvasElement, canvasContainer: HTMLDivElement): void => {
   const scenes: SceneInfo[] = [];
