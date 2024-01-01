@@ -10,6 +10,4 @@
   );
 </script>
 
-<section>
-  <span class={style}></span>
-</section>
+<span class={style}></span>
