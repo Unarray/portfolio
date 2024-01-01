@@ -13,7 +13,7 @@
 
 <div class="bg-white/2 backdrop-blur-sm rounded shadow overflow-hidden">
   <div class="p-4">
-    <div class="flex flex-wrap justify-between items-center">
+    <div class="flex flex-wrap justify-between items-center mb-2">
       <p class="uppercase font-bold text-lg">{project.name}</p>
 
       <Tag class={tagStyle} link={project.info.link}>{projectType[project.info.type]}</Tag>
