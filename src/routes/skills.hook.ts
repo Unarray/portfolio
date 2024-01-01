@@ -2,7 +2,7 @@ import { createBallScene, type SkillScene } from "./skills.three";
 import { technologies } from "$lib/config/techno";
 import { Clock, MathUtils, WebGLRenderer } from "three";
 import { isDomElementVisible } from "./skills.util";
-import { floatingAnimationConfig } from "./skils.const";
+import { floatingAnimationConfig } from "./skills.const";
 
 export const useSkillsRenderer = (canvas: HTMLCanvasElement, canvasContainer: HTMLDivElement): void => {
   const scenes: {seed: number; scene: SkillScene}[] = [];
