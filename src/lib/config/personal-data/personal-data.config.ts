@@ -1,6 +1,6 @@
 import type { PersonalDataConfig } from "$lib/config/personal-data/personal-data.type";
 
-export const personalData: PersonalDataConfig = {
+export const personalData = {
   birthday: "24/09/2003",
   socials: [
     { icon: "discord", link: "https://discord.com/users/273135587660136448" },
@@ -9,4 +9,4 @@ export const personalData: PersonalDataConfig = {
     { icon: "twitter", link: "https://www.linkedin.com/in/ethan-monjal" },
     { icon: "email", link: "mailto:ethan.monjal@hotmail.com" }
   ]
-} as const;
+} as const satisfies PersonalDataConfig;

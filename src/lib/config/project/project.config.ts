@@ -1,7 +1,7 @@
 import { date } from "$lib/utils/date/parser";
 import type { Project } from "./project.type";
 
-export const projects: Project[] = [
+export const projects = [
   {
     name: "MediaTek86 - Atelier pro CNED",
     description: "Application windows permettant de gérer le personnel d'une médiathèque et les absences relatives aux personnels",
@@ -57,4 +57,4 @@ export const projects: Project[] = [
     ],
     techno: ["NodeJS", "TypeScript"]
   }
-];
+] satisfies Project[];

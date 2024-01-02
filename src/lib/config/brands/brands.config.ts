@@ -11,10 +11,10 @@ import {
   IconMailFilled
 } from "@tabler/icons-svelte";
 
-export const brandsComponents: BrandsComponentsConfig = {
+export const brandsComponents = {
   discord: { base: IconBrandDiscord, filled: IconBrandDiscordFilled },
   github: { base: IconBrandGithub, filled: IconBrandGithubFilled },
   linkedin: { base: IconBrandLinkedin, filled: IconBrandLinkedin },
   twitter: { base: IconBrandTwitter, filled: IconBrandTwitterFilled },
   email: { base: IconMail, filled: IconMailFilled }
-} as const;
+} as const satisfies BrandsComponentsConfig;
