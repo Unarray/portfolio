@@ -4,42 +4,14 @@
   import { onMount } from "svelte";
   import { isOnMobile } from "$lib/utils/device";
   import ScrollToTop from "$lib/components/molecules/scroll-to-top/scroll-to-top.svelte";
-  import { PUBLIC_PREVIEW } from "$env/static/public";
+  import { PUBLIC_ENVIRONMENT } from "$env/static/public";
   import { Banner } from "$lib/components/molecules/notification/banner";
-  // import { SocialLinks } from "$lib/components/molecules/social-links";
-  // import type { SocialLink } from "$lib/components/molecules/social-links/social-links.type";
-    // import type { Size } from "$lib/components/icons";
+  import { Environment } from "$lib/utils/env";
 
   let isMobile: boolean;
   onMount(() => {
     isMobile = isOnMobile();
   });
-
-  // const size: Size = "1.5rem";
-
-  // const links: SocialLink[] = [
-  //   {
-  //     icon: "discord",
-  //     link: "https://discord.com/"
-  //   },
-  //   {
-  //     icon: "github",
-  //     link: "https://discord.com/"
-  //   },
-  //   {
-  //     icon: "twitter",
-  //     link: "https://discord.com/"
-  //   },
-  //   {
-  //     icon: "mail",
-  //     link: "https://discord.com/"
-  //   },
-  //   {
-  //     icon: "linkedin",
-  //     link: "https://discord.com/"
-  //   }
-  // ];
-
 </script>
 
 <svelte:head>
@@ -54,7 +26,7 @@
 <!-- <SocialLinks links={links} iconSize={size}/> -->
 <ScrollToTop />
 
-{#if Number(PUBLIC_PREVIEW)}
+{#if PUBLIC_ENVIRONMENT === Environment.DEVELOPMENT}
   <Banner
     message="La version que vous consultez est en développement, certaines fonctionnalités peuvent ne pas fonctionner correctement."
   />
