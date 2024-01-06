@@ -9,7 +9,9 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment: production
+    environment:
+      name: production
+      url: ${{ vars.URL }}
     steps:
       - uses: actions/checkout@v2
       - name: Install Vercel CLI
