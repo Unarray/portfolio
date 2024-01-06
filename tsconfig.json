@@ -1,5 +1,10 @@
 {
 	"extends": "./.svelte-kit/tsconfig.json",
+	"files": [
+		"postcss.config.js",
+		"svelte.config.js",
+		"tailwind.config.ts"
+	],
 	"compilerOptions": {
 		"allowJs": true,
 		"checkJs": true,
@@ -8,7 +13,7 @@
 		"resolveJsonModule": true,
 		"skipLibCheck": true,
 		"sourceMap": true,
-		"strict": true
+		"strict": true,
 	}
 	// Path aliases are handled by https://kit.svelte.dev/docs/configuration#alias
 	//

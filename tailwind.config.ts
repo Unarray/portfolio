@@ -1,7 +1,8 @@
 import type { Config } from "tailwindcss";
 
+
 export default {
-  content: ['./src/**/*.{html,js,svelte,ts}'],
+  content: ["./src/**/*.{html,js,svelte,ts}"],
   theme: {
     colors: {
       "transparent": "transparent",
@@ -60,16 +61,15 @@ export default {
 
     extend: {
       opacity: {
-        '1': '0.01',
-        '2': '0.02',
-        '3': '0.03',
-        '4': '0.04',
+        "1": "0.01",
+        "2": "0.02",
+        "3": "0.03",
+        "4": "0.04"
       },
       height: {
         "0.5": "1px"
       }
     }
   },
-  plugins: [],
+  plugins: []
 } satisfies Config;
-
