@@ -1,12 +1,28 @@
 <script lang="ts">
-    import { cva, type VariantProps } from "class-variance-authority";
-    import { twMerge } from "tailwind-merge";
+  import { cva, type VariantProps } from "class-variance-authority";
+  import type { MouseEventHandler } from "svelte/elements";
+  import { twMerge } from "tailwind-merge";
 
   export let variant: LinkProps["variant"] = undefined;
-  export let href: string;
+  export let target: string;
+  export let isTargetElementID = false;
+  export let scrollPourcent = 10;
   export let blankTarget = false;
   let clazz: string | null = null;
   export { clazz as class };
+
+  const scrollIntoView: MouseEventHandler<HTMLAnchorElement> = () => {
+    const targetedElement = document.querySelector(target);
+
+    if (!targetedElement) return;
+
+    const elementBox = targetedElement.getBoundingClientRect();
+    const absoluteElementTop = elementBox.top + window.scrollY;
+    const scrollPosition = absoluteElementTop - ((scrollPourcent / 100) * window.innerHeight);
+
+    window.location.hash = target;
+    window.scrollTo(0, scrollPosition);
+  };
 
   type LinkProps = VariantProps<typeof link>
   const link = cva(
@@ -26,9 +42,14 @@
       }
     }
   );
-
 </script>
 
-<a class={twMerge(link({ variant }), clazz)} target={blankTarget ? "_blank" : "_self"} href={href}>
-  <slot/>
-</a>
+{#if isTargetElementID}
+  <a class={twMerge(link({ variant }), clazz)} href={target} on:click|preventDefault={scrollIntoView}>
+    <slot/>
+  </a>
+{:else}
+  <a class={twMerge(link({ variant }), clazz)} target={blankTarget ? "_blank" : "_self"} href={target}>
+    <slot/>
+  </a>
+{/if}
