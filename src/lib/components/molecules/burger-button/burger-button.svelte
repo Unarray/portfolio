@@ -11,6 +11,7 @@
 <button
   class={clazz}
   aria-label="Hamburger menu"
-  on:click={() => open = !open}>
-  <svelte:component this={tag} class={clazz} />
+  on:click={() => open = !open}
+>
+  <svelte:component this={tag} class={clazz}/>
 </button>
