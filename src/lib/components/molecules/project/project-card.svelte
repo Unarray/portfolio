@@ -1,5 +1,6 @@
 <script lang="ts">
   import { Tag } from "$lib/components/atoms/tag";
+  import { Text } from "$lib/components/atoms/text";
   import { projectType, type Project } from "$lib/config/project";
   import clsx from "clsx";
 
@@ -19,7 +20,7 @@
       <Tag class={tagStyle} link={project.info.link}>{projectType[project.info.type]}</Tag>
     </div>
 
-    <p class="text-base mb-1">{project.description}</p>
+    <Text class="mb-1">{project.description}</Text>
 
     <ul class="list-disc list-inside ml-1">
       {#each project.skills as skill}
@@ -27,6 +28,8 @@
       {/each}
     </ul>
 
-    <p class="text-sm text-gray mt-2"><span class="text-white">Technologies:</span> {project.techno.join(" • ")}</p>
+    <Text color="gray" size="sm" class="mt-2">
+      <Text type="span" color="white">Technologies:</Text> {project.techno.join(" • ")}
+    </Text>
   </div>
 </div>
