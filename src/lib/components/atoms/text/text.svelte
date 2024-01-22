@@ -1,30 +1,34 @@
 <script lang="ts">
-  import type { Color, Size } from "./text.type";
-  import { clsx } from "clsx"
+  import { FONT_SIZES, FONT_WEIGHTS, TEXT_COLOR } from "./text.const";
+  import { cva, type VariantProps } from "class-variance-authority";
+  import { twMerge } from "tailwind-merge";
 
   export let type = "p";
-  export let color: Color = "white";
-  export let size: Size = "base";
+  export let color: TextProps["color"] = null;
+  export let size: TextProps["size"] = null;
+  export let weight: TextProps["weight"] = null;
+  let clazz: string | null = null;
+  export { clazz as class };
 
-  const style = clsx(
-    $$props.class,
+  type TextProps = VariantProps<typeof text>
+  const text = cva(
+    "inline-block backdrop-blur-sm border-white border-2 rounded p-2",
     {
-      // Text color:
-      "text-white": !color || color === "white",
-      "text-black": color === "black",
-      "text-gray": color === "gray",
-
-      // Font size:
-      "text-sm": size === "small",
-      "text-base": !size || size === "base",
-      "text-lg": size === "large",
-      "text-xl": size === "xl",
-      "text-2xl": size === "2xl",
-      "text-3xl": size === "3xl"
+      variants: {
+        color: TEXT_COLOR,
+        size: FONT_SIZES,
+        weight: FONT_WEIGHTS
+      },
+      defaultVariants: {
+        color: "white",
+        size: "base",
+        weight: "normal"
+      }
     }
   );
+
 </script>
 
-<svelte:element this={type} class={style}>
-  <slot></slot>
+<svelte:element this={type} class={twMerge(text({ color, size, weight }), clazz)}>
+  <slot/>
 </svelte:element>
