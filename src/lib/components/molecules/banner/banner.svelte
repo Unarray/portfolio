@@ -12,7 +12,7 @@
     class="sticky top-0 w-full z-40 bg-red p-2 flex items-center justify-between gap-2 text-center text-base"
     transition:slide={{ duration: 700, axis: "y" }}
   >
-    <span></span>
+    <span></span> <!-- Add margin left -->
 
     <div class="flex gap-4 justify-center items-center">
       <IconAlertCircle class="h-6 w-auto" />

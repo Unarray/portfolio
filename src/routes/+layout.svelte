@@ -5,7 +5,7 @@
   import { isOnMobile } from "$lib/utils/device";
   import ScrollToTop from "$lib/components/molecules/scroll-to-top/scroll-to-top.svelte";
   import { PUBLIC_ENVIRONMENT } from "$env/static/public";
-  import { Banner } from "$lib/components/molecules/notification/banner";
+  import { Banner } from "$lib/components/molecules/banner";
   import { Environment } from "$lib/utils/env";
 
   let isMobile: boolean;
