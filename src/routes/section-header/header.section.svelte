@@ -1,11 +1,13 @@
 <script lang="ts">
-  import { ButtonLink } from "$lib/components/atoms/button-link";
   import { IconBrandGithub, IconDownload } from "@tabler/icons-svelte";
   import { Navbar } from "$lib/components/layouts/navbar";
   import { config } from "$lib/config/ts-particles";
   import Particles, { particlesInit } from "@tsparticles/svelte";
   import { loadSlim } from "@tsparticles/slim";
   import { onMount } from "svelte";
+  import { Link } from "$lib/components/atoms/link";
+  import { Button } from "$lib/components/atoms/button";
+  import { Text } from "$lib/components/atoms/text";
 
   onMount(() => {
     void particlesInit(async(engine) => {
@@ -35,14 +37,18 @@
             suscipit voluptate cumque commodi mollitia nulla quia?
           </p>
           <div class="mt-5 flex items-center justify-start gap-4 flex-wrap">
-            <ButtonLink link="/cv.pdf" blankTarget={true} class="w-fit flex justify-around items-center gap-2">
-              <IconDownload class="h-5"/>
-              Télécharger CV
-            </ButtonLink>
-            <ButtonLink link="https://github.com/Unarray" blankTarget={true} class="w-fit flex justify-around items-center gap-2">
-              <IconBrandGithub class="h-5" />
-              Github
-            </ButtonLink>
+            <Link target="/cv.pdf" blankTarget={true}>
+              <Button class="w-fit flex justify-around items-center gap-2">
+                <IconDownload class="h-5"/>
+                <Text>Télécharger CV</Text>
+              </Button>
+            </Link>
+            <Link target="https://github.com/Unarray" blankTarget={true}>
+              <Button class="w-fit flex justify-around items-center gap-2">
+                <IconBrandGithub class="h-5"/>
+                <Text>Github</Text>
+              </Button>
+            </Link>
           </div>
         </div>
 
