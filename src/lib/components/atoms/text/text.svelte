@@ -12,7 +12,7 @@
 
   type TextProps = VariantProps<typeof text>
   const text = cva(
-    "inline-block backdrop-blur-sm border-white border-2 rounded p-2",
+    "",
     {
       variants: {
         color: TEXT_COLOR,
