@@ -18,8 +18,10 @@ export const useSkillsRenderer = (canvas: HTMLCanvasElement, canvasContainer: HT
   const onStart = (scene: SkillBallScene, index: number): void => {
     scene.control.minAzimuthAngle = -Infinity;
     scene.control.maxAzimuthAngle = Infinity;
-    scene.control.minPolarAngle = 0;
-    scene.control.maxPolarAngle = Math.PI;
+
+    const delta =  Math.PI / 12;
+    scene.control.minPolarAngle = 0 + delta;
+    scene.control.maxPolarAngle = Math.PI - delta;
     scenes[index].isReseting = false;
   };
 
