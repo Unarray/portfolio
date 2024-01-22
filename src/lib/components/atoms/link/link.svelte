@@ -3,7 +3,7 @@
   import type { MouseEventHandler } from "svelte/elements";
   import { twMerge } from "tailwind-merge";
 
-  export let variant: LinkProps["variant"] = undefined;
+  export let variant: LinkProps["variant"] = null;
   export let target: string;
   export let isTargetElementID = false;
   export let scrollPourcent = 10;

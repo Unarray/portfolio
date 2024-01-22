@@ -2,7 +2,7 @@
   import { cva, type VariantProps } from "class-variance-authority";
   import { twMerge } from "tailwind-merge";
 
-  export let variant: ButtonProps["variant"] = undefined;
+  export let variant: ButtonProps["variant"] = null;
   let clazz: string | null = null;
   export { clazz as class };
 
