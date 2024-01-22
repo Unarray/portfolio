@@ -19,7 +19,7 @@
     if (!target) return;
 
     const elementBox = target.getBoundingClientRect();
-    const absoluteElementTop = elementBox.top + window.pageYOffset;
+    const absoluteElementTop = elementBox.top + window.scrollY;
     const scrollPosition = absoluteElementTop - ((pourcent / 100) * window.innerHeight);
 
     window.scrollTo(0, scrollPosition);
