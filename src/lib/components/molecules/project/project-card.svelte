@@ -7,8 +7,8 @@
   export let project: Project;
 
   const tagStyle = clsx({
-    "bg-blue": project.info.type === "pro",
-    "bg-green": project.info.type === "openSource"
+    "bg-blue": project.info.type === projectType.pro,
+    "bg-green": project.info.type === projectType.openSource
   });
 </script>
 
