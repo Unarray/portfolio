@@ -9,7 +9,7 @@ export const Config = {
   },
   "lang.NodeJS": {
     name: "NodeJS",
-    iconURL: generateIconURL("lang.node-js")
+    iconURL: generateIconURL("lang.nodejs")
   },
   "lib.Vitest": {
     name: "Vitest",

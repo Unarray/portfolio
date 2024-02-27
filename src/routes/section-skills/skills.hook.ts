@@ -1,9 +1,9 @@
 import type { SkillBallScene } from "./skills.three";
 import { createBallScene } from "./skills.three";
-import { technologies } from "$lib/config/techno";
+import { Config } from "$lib/config/technologie";
 import { Clock, MathUtils, WebGLRenderer } from "three";
 import { isDomElementVisible } from "./skills.util";
-import { floatingAnimationConfig } from "./skills.const";
+import { floatingAnimationConfig, selectedTechnologieID } from "./skills.const";
 import type { SceneInfo } from "./skills.type";
 
 // TODO: See how can we improve this code.
@@ -26,7 +26,8 @@ export const useSkillsRenderer = (canvas: HTMLCanvasElement, canvasContainer: HT
   };
 
   // Generate skills containers elements
-  for (const technologie of technologies) {
+  for (const id of selectedTechnologieID) {
+    const technologie = Config[id];
     const div = document.createElement("div");
     div.classList.add("w-32", "h-32");
 
