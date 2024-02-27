@@ -1,1 +1,0 @@
-export { default as ScrollToId } from "./scoll-to-id.svelte";
