@@ -1,4 +1,5 @@
-import type { projectType } from "./project.const";
+import type { Config } from "$lib/config/technologie";
+import type { ProjectType } from "./project.const";
 import type { Dayjs } from "dayjs";
 
 export type Project = {
@@ -10,12 +11,12 @@ export type Project = {
   };
   info: ProjectInfo;
   skills: string[];
-  techno: string[];
+  technologies: Array<keyof typeof Config>;
 }
 
 export type ProjectInfo = {
-  type: ProjectType;
-  link?: string;
+  type: typeof ProjectType.pro;
+} | {
+  type: typeof ProjectType.openSource;
+  link: string;
 };
-
-export type ProjectType = keyof typeof projectType;

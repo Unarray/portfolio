@@ -1,3 +1,4 @@
+import { ProjectType } from "./project.const";
 import { date } from "$lib/utils/date/parser";
 import type { Project } from "./project.type";
 
@@ -9,7 +10,7 @@ export const projects = [
       start: date(8, 6, 2023)
     },
     info: {
-      type: "openSource",
+      type: ProjectType.openSource,
       link: "https://github.com/Unarray/MediaTek86"
     },
     skills: [
@@ -19,7 +20,7 @@ export const projects = [
       "Communication avec une base de données MySQL",
       "Génération de documentation"
     ],
-    techno: ["C#", "Windows Form", "MySQL", "Sandcastle", "Github"]
+    technologies: ["lang.C#", "lib.WindowsForm", "db.MySQL", "tool.Sandcastle", "tool.Github"]
   },
   {
     name: "Tintify",
@@ -28,7 +29,7 @@ export const projects = [
       start: date(15, 4, 2023)
     },
     info: {
-      type: "openSource",
+      type: ProjectType.openSource,
       link: "https://github.com/Unarray/Tintify"
     },
     skills: [
@@ -38,7 +39,7 @@ export const projects = [
       "Documentation sur les séquences d'échappement ANSI",
       "Création de divers fonctions afin de manipuler les valeurs RGB (gradient linéaires, arc-en-ciel, etc...)"
     ],
-    techno: ["NodeJS", "TypeScript", "Vitest", "NPM"]
+    technologies: ["lang.NodeJS", "lang.TypeScript", "lib.Vitest", "tool.NPM"]
   },
   {
     name: "Virtual Royaume",
@@ -47,7 +48,7 @@ export const projects = [
       start: date(13, 5, 2022)
     },
     info: {
-      type: "openSource",
+      type: ProjectType.openSource,
       link: "https://github.com/Virtual-Royaume/"
     },
     skills: [
@@ -55,6 +56,6 @@ export const projects = [
       "Review des contributions de la communauté",
       "Développement d'un bot Discord à l'aide de l'API DiscordJS"
     ],
-    techno: ["NodeJS", "TypeScript"]
+    technologies: ["lang.NodeJS", "lang.TypeScript"]
   }
 ] satisfies Project[];
