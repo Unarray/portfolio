@@ -6,13 +6,13 @@
 
   export let project: Project;
 
-  const tagStyle = clsx({
-    "bg-blue": project.info.type === ProjectType.pro,
-    "bg-green": project.info.type === ProjectType.openSource
-  });
+  const tagStyle = clsx([
+    project.info.type === ProjectType.pro && "bg-blue",
+    project.info.type === ProjectType.openSource && "bg-green hover:underline"
+  ]);
 </script>
 
-<div class="bg-white/2 backdrop-blur-sm rounded shadow overflow-hidden">
+<div class="bg-white/4 backdrop-blur-sm rounded overflow-hidden">
   <div class="p-4">
     <div class="flex flex-wrap justify-between items-center mb-2">
       <p class="uppercase font-bold text-lg">{project.name}</p>

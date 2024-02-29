@@ -22,7 +22,7 @@
 {#if isVisible}
   <button
     on:click={() => document.body.scrollIntoView()}
-    class="{style}"
+    class={style}
     transition:fly={{ y: "4rem", duration: 700 }}
   >
     <IconChevronUp class="h-6"/>

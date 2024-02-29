@@ -3,7 +3,7 @@
   import { projects } from "$lib/config/project";
 </script>
 
-<section id="projects" class="mt-40">
+<section id="projects">
   <h1 class="text-xxl text-center mb-10">Projets</h1>
 
   <div class="mx-auto grid grid-cols-1 w-fit gap-2">

@@ -6,7 +6,7 @@
   export let variant: LinkProps["variant"] = null;
   export let target: string;
   export let isTargetElementID = false;
-  export let scrollPourcent = 10;
+  export let scrollPercent = 10;
   export let blankTarget = false;
   let clazz: string | null = null;
   export { clazz as class };
@@ -18,7 +18,7 @@
 
     const elementBox = targetedElement.getBoundingClientRect();
     const absoluteElementTop = elementBox.top + window.scrollY;
-    const scrollPosition = absoluteElementTop - ((scrollPourcent / 100) * window.innerHeight);
+    const scrollPosition = absoluteElementTop - ((scrollPercent / 100) * window.innerHeight);
 
     window.location.hash = target;
     window.scrollTo(0, scrollPosition);

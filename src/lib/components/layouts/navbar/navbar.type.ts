@@ -1,15 +1,13 @@
-import type { Size } from "$lib/components/icons";
-import type * as brands from "$lib/components/icons/brand";
-import type { linkType } from "./navbar.cont";
+import type { brandsComponents } from "$lib/config/brands";
 
-export type NavbarLink = {
-  type: typeof linkType[keyof typeof linkType];
-  link: string;
+export type Section = {
+  name: string;
+  target: `#${string}`;
 }
 
-export type SocialLink = {
-  icon: keyof typeof brands;
+export type ExternalLink = {
+  name: string;
   link: string;
-  size: Size;
-  style: string;
+  color: "blue" | "red" | "green" | "gray";
+  icon: keyof typeof brandsComponents;
 }

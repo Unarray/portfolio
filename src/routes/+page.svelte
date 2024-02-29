@@ -3,14 +3,12 @@
   import { HeaderSection } from "./section-header";
   import { ProjectsSection } from "./section-projects";
   import { SkillsSection } from "./section-skills";
-
-  const style = "mx-auto w-4/5 lg:w-11/12 sm:w-11/12 transition-width duration-500";
 </script>
 
 <HeaderSection />
 
-<div class={style}>
+<div class="mx-auto w-3/5 xl:w-3/4 lg:w-11/12 transition-width duration-500">
   <SkillsSection />
-  <Separator />
+  <Separator class="my-32" />
   <ProjectsSection />
 </div>

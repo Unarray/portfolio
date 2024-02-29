@@ -1,20 +1,24 @@
 <script lang="ts">
   import { BurgerButton } from "$lib/components/molecules/burger-button";
   import { MediaQuery } from "$lib/components/molecules/media-query";
-  import { ScrollToId } from "$lib/components/molecules/scroll-to-id";
+  import { Link } from "$lib/components/atoms/link";
+  import { Button } from "$lib/components/atoms/button";
+  import { Text } from "$lib/components/atoms/text";
   import { slide } from "svelte/transition";
   import clsx from "clsx";
-  import type { NavbarLink, SocialLink } from "$lib/components/layouts/navbar/navbar.type";
+  import type { ExternalLink, Section } from "./navbar.type";
+  import { brandsComponents } from "$lib/config/brands";
 
-  export let links: NavbarLink[];
-  export let socials: SocialLink[];
+  export let sections: Section[];
+  export let externalLinks: ExternalLink[];
 
+  const scrollPercent = 10;
   const mediaQuery = "(min-width: 1024px)";
   let open: boolean;
 
   const mobileNavbarContainerStyle = clsx(
-    "z-40 fixed right-0 top-0 w-full bg-black-2/95",
-    "py-5 bg-header rounded-l flex flex-col items-center justify-evenly gap-3 shadow-xl box"
+    "z-40 fixed right-0 top-0 w-full bg-black-1/90",
+    "py-5 bg-header rounded-l flex flex-col items-center justify-evenly gap-10 shadow-xl box"
   );
 </script>
 
@@ -24,36 +28,52 @@
 
   <!-- Desktop navbar -->
   {:else if matches}
-    <nav class="absolute w-full">
+    <nav class="fixed w-full">
       <div class="absolute w-full my-5 px-10 flex justify-between">
         <div>
-          <ScrollToId id="#skills" pourcent={10} >Tecnologies</ScrollToId>
-          <ScrollToId id="#projects" pourcent={10} >Projets</ScrollToId>
+          {#each sections as section}
+            <Link target={section.target} isTargetElementID={true} scrollPercent={scrollPercent} >
+              <Button>
+                <Text>{section.name}</Text>
+              </Button>
+            </Link>
+          {/each}
+        </div>
+        <div class="bg-white/5 p-1 backdrop-blur-sm rounded flex justify-around items-center">
+          {#each externalLinks as externalLink}
+            <Link target={externalLink.link} blankTarget={true} class={`p-1 hover:text-${externalLink.color}`} >
+              <svelte:component this={brandsComponents[externalLink.icon].base} class="h-5" />
+            </Link>
+          {/each}
         </div>
       </div>
     </nav>
 
   <!-- Mobile navbar (burger menu) -->
   {:else}
-    <nav class="absolute w-full">
+    <nav class="fixed w-full">
       {#if open}
-        <div
-          class={mobileNavbarContainerStyle}
-          transition:slide
-        >
+        <div class={mobileNavbarContainerStyle} transition:slide>
           <div class="flex flex-col items-center justify-center gap-3 mt-auto w-1/2 sm:px-16 sm:w-full">
-            <ScrollToId id="#skills" pourcent={10} class="w-full">Tecnologies</ScrollToId>
-            <ScrollToId id="#projects" pourcent={10} class="w-full" >Projets</ScrollToId>
+            {#each sections as section}
+              <Link target={section.target} isTargetElementID={true} scrollPercent={scrollPercent} >
+                <Button>
+                  <Text>{section.name}</Text>
+                </Button>
+              </Link>
+            {/each}
           </div>
-          <div class="flex items-center justify-center gap-3 mt-auto">
-            <ScrollToId id="#skills" pourcent={10} >Tecnologies</ScrollToId>
-            <ScrollToId id="#projects" pourcent={10} >Projets</ScrollToId>
+          <div class="bg-white/5 p-1 backdrop-blur-sm rounded flex items-center justify-center gap-3 mt-auto">
+            {#each externalLinks as externalLink}
+              <Link target={externalLink.link} blankTarget={true} class={`p-1 hover:text-${externalLink.color}`} >
+                <svelte:component this={brandsComponents[externalLink.icon].base} class="h-5" />
+              </Link>
+            {/each}
           </div>
         </div>
       {/if}
 
       <BurgerButton bind:open class="z-40 fixed top-4 right-4 h-8 w-auto" />
     </nav>
-
   {/if}
 </MediaQuery>
