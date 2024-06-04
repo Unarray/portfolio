@@ -2,6 +2,7 @@
   import { Tag } from "$lib/components/atoms/tag";
   import { Text } from "$lib/components/atoms/text";
   import { type Project, ProjectType } from "$lib/config/project";
+  import { Config } from "$lib/config/technologie";
   import clsx from "clsx";
 
   export let project: Project;
@@ -10,6 +11,8 @@
     project.info.type === ProjectType.pro && "bg-blue",
     project.info.type === ProjectType.openSource && "bg-green hover:underline"
   ]);
+
+  const technologiesName = project.technologies.map((id) => Config[id].name);
 </script>
 
 <div class="bg-white/4 backdrop-blur-sm rounded overflow-hidden">
@@ -32,7 +35,7 @@
     </ul>
 
     <Text color="gray" size="sm" class="mt-2">
-      <Text type="span" color="white">Technologies:</Text> {project.technologies.join(" • ")}
+      <Text type="span" color="white">Technologies:</Text> {technologiesName.join(" • ")}
     </Text>
   </div>
 </div>

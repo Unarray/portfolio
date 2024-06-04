@@ -1,8 +1,11 @@
 <script lang="ts">
   import { Text } from "$lib/components/atoms/text";
   import { type Experience } from "$lib/config/experiences";
+  import { Config } from "$lib/config/technologie";
 
   export let experience: Experience;
+
+  const technologiesName = experience.technologies.map((id) => Config[id].name);
 </script>
 
 <div class="bg-white/4 backdrop-blur-sm rounded overflow-hidden">
@@ -19,7 +22,7 @@
     {/each}
 
     <Text color="gray" size="sm" class="mt-2">
-      <Text type="span" color="white">Technologies:</Text> {experience.technologies.join(" • ")}
+      <Text type="span" color="white">Technologies:</Text> {technologiesName.join(" • ")}
     </Text>
   </div>
 </div>
