@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { IconAlertCircle, IconX } from "@tabler/icons-svelte";
+  import IconAlertCircle from "@tabler/icons-svelte/IconAlertCircle.svelte";
+  import IconX from "@tabler/icons-svelte/IconX.svelte";
   import { slide } from "svelte/transition";
 
   export let message: string;

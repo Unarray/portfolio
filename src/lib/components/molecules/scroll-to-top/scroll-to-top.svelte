@@ -1,7 +1,7 @@
 <script lang="ts">
   import { fly } from "svelte/transition";
   import clsx from "clsx";
-  import { IconChevronUp } from "@tabler/icons-svelte";
+  import IconChevronUp from "@tabler/icons-svelte/IconChevronUp.svelte";
 
   let clazz = "";
   export { clazz as class };

@@ -29,6 +29,6 @@
 
 </script>
 
-<svelte:element this={type} class={twMerge(text({ color, size, weight }), clazz)}>
+<svelte:element this={type} class={twMerge(text({ color, size, weight }), clazz)} >
   <slot/>
 </svelte:element>

@@ -28,7 +28,7 @@
 
   <!-- Desktop navbar -->
   {:else if matches}
-    <nav class="fixed w-full">
+    <nav class="fixed z-10 w-full">
       <div class="absolute w-full my-5 px-10 flex justify-between">
         <div>
           {#each sections as section}
@@ -51,7 +51,7 @@
 
   <!-- Mobile navbar (burger menu) -->
   {:else}
-    <nav class="fixed w-full">
+    <nav class="fixed z-10 w-full">
       {#if open}
         <div class={mobileNavbarContainerStyle} transition:slide>
           <div class="flex flex-col items-center justify-center gap-3 mt-auto w-1/2 sm:px-16 sm:w-full">

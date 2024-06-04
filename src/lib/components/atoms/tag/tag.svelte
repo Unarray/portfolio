@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { IconExternalLink } from "@tabler/icons-svelte";
+  import IconExternalLink from "@tabler/icons-svelte/IconExternalLink.svelte";
   import clsx from "clsx";
 
   export let link: string | null = null;

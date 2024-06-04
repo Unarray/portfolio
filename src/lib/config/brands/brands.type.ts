@@ -1,12 +1,13 @@
-import type { Icon, IconProps } from "@tabler/icons-svelte";
+import type { IconsProps } from "@tabler/icons-svelte/IconIcons.svelte";
+import type  Icons from "@tabler/icons-svelte/IconIcons.svelte";
 import type { ComponentConstructorOptions } from "svelte";
 
 export type BrandsComponentsConfig = Record<
   string,
   {
-    base: ComponentConstructor<Icon>;
-    filled: ComponentConstructor<Icon>;
+    base: ComponentConstructor<Icons>;
+    filled: ComponentConstructor<Icons>;
   }
 >;
 
-type ComponentConstructor<T> = new (options: ComponentConstructorOptions<IconProps>) => T;
+type ComponentConstructor<T> = new (options: ComponentConstructorOptions<IconsProps>) => T;

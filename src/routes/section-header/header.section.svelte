@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { IconBrandGithub, IconDownload } from "@tabler/icons-svelte";
+  import IconDownload from "@tabler/icons-svelte/IconDownload.svelte";
+  import IconBrandGithub from "@tabler/icons-svelte/IconBrandGithub.svelte";
   import { Navbar } from "$lib/components/layouts/navbar";
   import { config } from "$lib/config/ts-particles";
   import Particles, { particlesInit } from "@tsparticles/svelte";
@@ -20,7 +21,7 @@
   <header class="min-h-screen">
     <Particles
       options={config}
-      class="absolute w-full h-full -z-10 blur-[2px]"
+      class="absolute w-full h-full -z-10"
     />
 
     <Navbar

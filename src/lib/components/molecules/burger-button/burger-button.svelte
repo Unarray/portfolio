@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { IconMenu2, IconX } from "@tabler/icons-svelte";
+  import IconMenu2 from "@tabler/icons-svelte/IconMenu2.svelte";
+  import IconX from "@tabler/icons-svelte/IconX.svelte";
 
   export let open = false;
   let clazz = "";
