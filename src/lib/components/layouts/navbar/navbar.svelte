@@ -12,7 +12,7 @@
   export let sections: Section[];
   export let externalLinks: ExternalLink[];
 
-  const scrollPercent = 10;
+  const scrollPercent = 0;
   const mediaQuery = "(min-width: 1024px)";
   let open: boolean;
 
