@@ -25,7 +25,6 @@
 <MediaQuery query={mediaQuery} let:matches>
   {#if matches === -1}
     <nav class="absolute" />
-
   <!-- Desktop navbar -->
   {:else if matches}
     <nav class="fixed z-10 w-full">

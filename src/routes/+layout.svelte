@@ -20,20 +20,22 @@
   <title>Ethan Monjal</title>
 </svelte:head>
 
-
+<!-- Remove custom cursor if user is on mobile -->
 {#if !isMobile}
-<Cursor />
+  <Cursor />
 {/if}
 
+<!-- Scroll to top button -->
 <ScrollToTop />
 
+<!-- Info banner if environment is DEV or PROD -->
 {#if PUBLIC_ENVIRONMENT === Environment.DEVELOPMENT}
   <Banner
     message="La version que vous consultez est en développement, certaines fonctionnalités peuvent ne pas fonctionner correctement."
   />
 {/if}
 
-<header class="absolute">
+<header>
   <Navbar
     sections={[
       { name: "Technologies", target: "#techologies" },
