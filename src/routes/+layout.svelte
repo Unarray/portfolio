@@ -39,11 +39,13 @@
   <Navbar
     sections={[
       { name: "Technologies", target: "#techologies" },
+      { name: "Expériences", target: "#experiences" },
       { name: "Projets", target: "#projects" }
     ]}
     externalLinks={[
       { name: "LinkedIn", icon: "linkedin", link: "https://www.linkedin.com/in/ethan-monjal/", color: "blue" },
       { name: "Github", icon: "github", link: "https://github.com/Unarray", color: "gray" },
+      { name: "Twitter", icon: "twitter", link: "https://twitter.com/Unarray_", color: "gray" },
       { name: "Discord", icon: "discord", link: "https://discord.com/users/273135587660136448", color: "blue" }
     ]}
   />

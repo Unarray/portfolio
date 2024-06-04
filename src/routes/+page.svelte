@@ -10,10 +10,13 @@
 
 <div class="mx-auto w-3/5 xl:w-3/4 lg:w-11/12 transition-width duration-500">
   <Separator />
+
   <SkillsSection />
   <Separator />
-  <ProjectsSection />
-  <Separator />
+
   <ExperiencesSection />
+  <Separator />
+
+  <ProjectsSection />
   <Separator />
 </div>
