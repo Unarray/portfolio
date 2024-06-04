@@ -3,6 +3,7 @@
   import { HeaderSection } from "./section-header";
   import { ProjectsSection } from "./section-projects";
   import { SkillsSection } from "./section-skills";
+  import { ExperiencesSection } from "./section-experiences";
 </script>
 
 <HeaderSection />
@@ -12,5 +13,7 @@
   <SkillsSection />
   <Separator />
   <ProjectsSection />
+  <Separator />
+  <ExperiencesSection />
   <Separator />
 </div>
