@@ -8,7 +8,9 @@
 <HeaderSection />
 
 <div class="mx-auto w-3/5 xl:w-3/4 lg:w-11/12 transition-width duration-500">
+  <Separator />
   <SkillsSection />
-  <Separator class="my-32" />
+  <Separator />
   <ProjectsSection />
+  <Separator />
 </div>

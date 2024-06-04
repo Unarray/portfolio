@@ -11,11 +11,10 @@
 
 </script>
 
-<section id="techologies">
-  <h1 class="text-xxl text-center mb-10">Technologies</h1>
+<section id="techologies" class="min-h-screen w-full flex flex-col justify-center items-center gap-12 py-4">
+  <h1 class="text-xxl">Technologies</h1>
 
-  <div bind:this={canvasContainer} class="flex flex-1 items-center justify-center flex-wrap w-3/5 lg:w-full mx-auto">
+  <div bind:this={canvasContainer} class="flex flex-1 items-center justify-center flex-wrap flex-grow-0">
     <canvas bind:this={canvas} class="absolute -z-10"></canvas>
   </div>
-
 </section>

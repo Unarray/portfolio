@@ -7,6 +7,8 @@
   import { PUBLIC_ENVIRONMENT } from "$env/static/public";
   import { Banner } from "$lib/components/molecules/banner";
   import { Environment } from "$lib/utils/env";
+  import { Navbar } from "$lib/components/layouts/navbar";
+  import { Text } from "$lib/components/atoms/text";
 
   let isMobile: boolean;
   onMount(() => {
@@ -23,7 +25,6 @@
 <Cursor />
 {/if}
 
-<!-- <SocialLinks links={links} iconSize={size}/> -->
 <ScrollToTop />
 
 {#if PUBLIC_ENVIRONMENT === Environment.DEVELOPMENT}
@@ -32,6 +33,24 @@
   />
 {/if}
 
+<header class="absolute">
+  <Navbar
+    sections={[
+      { name: "Technologies", target: "#techologies" },
+      { name: "Projets", target: "#projects" }
+    ]}
+    externalLinks={[
+      { name: "LinkedIn", icon: "linkedin", link: "https://www.linkedin.com/in/ethan-monjal/", color: "blue" },
+      { name: "Github", icon: "github", link: "https://github.com/Unarray", color: "gray" },
+      { name: "Discord", icon: "discord", link: "https://discord.com/users/273135587660136448", color: "blue" }
+    ]}
+  />
+</header>
+
 <main>
   <slot/>
 </main>
+
+<footer class="mt-12 mb-5 flex justify-center">
+  <Text size="sm">Made with ❤️ by Unarray</Text>
+</footer>
