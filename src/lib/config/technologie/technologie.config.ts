@@ -3,6 +3,10 @@ import type { Technologie, TechnologieID } from "./technologie.type";
 
 
 export const Config = {
+  "lang.JavaScript": {
+    name: "JavaScript",
+    iconURL: generateIconURL("lang.javascript")
+  },
   "lang.TypeScript": {
     name: "TypeScript",
     iconURL: generateIconURL("lang.typescript")
@@ -47,6 +51,10 @@ export const Config = {
     name: "C#",
     iconURL: generateIconURL("lang.c-sharp")
   },
+  "lang.PHP": {
+    name: "PHP",
+    iconURL: generateIconURL("lang.php")
+  },
   "lib.WindowsForm": {
     name: "Windows Form",
     iconURL: generateIconURL("lib.windows-form")
@@ -54,6 +62,14 @@ export const Config = {
   "db.MySQL": {
     name: "MySQL",
     iconURL: generateIconURL("db.mysql")
+  },
+  "db.PostgreSQL": {
+    name: "PostgreSQL",
+    iconURL: generateIconURL("db.postgresql")
+  },
+  "db.Redis": {
+    name: "Redis",
+    iconURL: generateIconURL("db.redis")
   },
   "tool.Sandcastle": {
     name: "Sandcastle",
@@ -66,7 +82,16 @@ export const Config = {
 } as const satisfies Record<TechnologieID, Technologie>;
 
 export const selectedTechnologieID: (keyof typeof Config)[] = [
-  "lang.NodeJS",
+  "lang.JavaScript",
   "lang.TypeScript",
-  "lang.HTML"
+  "lang.NodeJS",
+  "db.PostgreSQL",
+  "db.Redis",
+  "db.MySQL",
+  "lang.HTML",
+  "lang.CSS",
+  "lib.Tailwind",
+  "lang.PHP",
+  "tool.Github",
+  "tool.GithubActions"
 ];
