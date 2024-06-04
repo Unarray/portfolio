@@ -9,9 +9,9 @@ export const personalData = {
   lastname: "Monjal",
   position: "Développeur Back-end",
   description: [
-    `Développeur de ${dayJS().diff(birthday, "years")} ans passioné par l'informatique en général,`,
-    "Depuis 2018, je navigue dans le monde du développement, trouvant ma joie dans les puzzles logiques, les algorithmes et la douce symphonie du codage !",
-    "La quasi-totalité de mes compétences ont été acquises en autodidacte à travers divers projets, ou juste par curiosité."
+    `de ${dayJS().diff(birthday, "years")} ans passioné par l'informatique en général.`,
+    "La quasi-totalité de mes compétences ont été acquises en autodidacte à travers divers projets, ou juste par curiosité.",
+    "Depuis 2018, je navigue dans le monde du développement, trouvant ma joie dans les puzzles logiques, les algorithmes et la douce symphonie du codage !"
   ],
   birthday: birthday,
   socials: {
