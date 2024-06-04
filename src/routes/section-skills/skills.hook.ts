@@ -5,6 +5,7 @@ import { Clock, MathUtils, WebGLRenderer } from "three";
 import { isDomElementVisible } from "./skills.util";
 import { floatingAnimationConfig } from "./skills.const";
 import type { SceneInfo } from "./skills.type";
+import { Tooltip } from "@svelte-plugins/tooltips";
 
 // TODO: See how can we improve this code.
 // - What can we move to `SkillBallScene` class
@@ -28,10 +29,25 @@ export const useSkillsRenderer = (canvas: HTMLCanvasElement, canvasContainer: HT
   // Generate skills containers elements
   for (const id of selectedTechnologieID) {
     const technologie = Config[id];
+    const divTooltipContainer = document.createElement("div");
+    canvasContainer.appendChild(divTooltipContainer);
+
+    const tooltip = new Tooltip({
+      target: divTooltipContainer,
+      props: {
+        content: technologie.name,
+        autoPosition: true,
+        style: {
+          backgroundColor: "#272727"
+        }
+      }
+    });
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    const tooltipContainer = tooltip.$$.ctx[7] as HTMLSpanElement;
+
     const div = document.createElement("div");
     div.classList.add("w-32", "h-32");
-
-    canvasContainer.appendChild(div);
+    tooltipContainer.appendChild(div);
 
     const scene = createBallScene(div, technologie.iconURL);
     const index = scenes.push({

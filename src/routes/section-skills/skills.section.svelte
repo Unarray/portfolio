@@ -17,4 +17,5 @@
   <div bind:this={canvasContainer} class="flex flex-1 items-center justify-center flex-wrap flex-grow-0">
     <canvas bind:this={canvas} class="absolute -z-10"></canvas>
   </div>
+
 </section>
