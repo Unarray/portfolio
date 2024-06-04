@@ -64,3 +64,9 @@ export const Config = {
     iconURL: generateIconURL("tool.github")
   }
 } as const satisfies Record<TechnologieID, Technologie>;
+
+export const selectedTechnologieID: (keyof typeof Config)[] = [
+  "lang.NodeJS",
+  "lang.TypeScript",
+  "lang.HTML"
+];

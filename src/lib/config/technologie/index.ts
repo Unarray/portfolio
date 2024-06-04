@@ -1,1 +1,1 @@
-export { Config } from "./technologie.config";
+export { Config, selectedTechnologieID } from "./technologie.config";

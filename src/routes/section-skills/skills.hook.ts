@@ -1,9 +1,9 @@
 import type { SkillBallScene } from "./skills.three";
 import { createBallScene } from "./skills.three";
-import { Config } from "$lib/config/technologie";
+import { Config, selectedTechnologieID } from "$lib/config/technologie";
 import { Clock, MathUtils, WebGLRenderer } from "three";
 import { isDomElementVisible } from "./skills.util";
-import { floatingAnimationConfig, selectedTechnologieID } from "./skills.const";
+import { floatingAnimationConfig } from "./skills.const";
 import type { SceneInfo } from "./skills.type";
 
 // TODO: See how can we improve this code.
@@ -40,11 +40,11 @@ export const useSkillsRenderer = (canvas: HTMLCanvasElement, canvasContainer: HT
       scene: scene
     }) - 1;
 
-    let timeoutID = 0;
+    let timeoutID: NodeJS.Timeout | undefined;
     scene.control.addEventListener("end", () => {
       timeoutID = setTimeout(
         () => {
-          timeoutID = 0;
+          timeoutID = undefined;
           scenes[index].isReseting = true;
         },
         1000 * 3
@@ -54,7 +54,7 @@ export const useSkillsRenderer = (canvas: HTMLCanvasElement, canvasContainer: HT
     scene.control.addEventListener("start", () => {
       if (timeoutID) {
         clearTimeout(timeoutID);
-        timeoutID = 0;
+        timeoutID = undefined;
       }
       onStart(scenes[index].scene, index);
     });
