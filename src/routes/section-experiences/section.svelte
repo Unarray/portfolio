@@ -9,7 +9,7 @@
   });
 </script>
 
-<section id="experiences" class="min-h-screen w-full flex flex-col justify-center items-center gap-12 py-4">
+<section id="experiences" class="min-h-screen w-full flex flex-col justify-center items-center gap-12 py-16">
   <h1 class="text-xxl">Expériences</h1>
 
   <div class="w-full grid grid-cols-[auto_auto_minmax(0,1fr)]">

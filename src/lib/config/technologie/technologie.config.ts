@@ -59,6 +59,22 @@ export const Config = {
     name: "Windows Form",
     iconURL: generateIconURL("lib.windows-form")
   },
+  "lib.Symfony": {
+    name: "Symfony",
+    iconURL: generateIconURL("lib.symfony")
+  },
+  "lib.Electron": {
+    name: "Electron",
+    iconURL: generateIconURL("lib.electron")
+  },
+  "lib.ThreeJS": {
+    name: "ThreeJS",
+    iconURL: generateIconURL("lib.threejs")
+  },
+  "lib.Svelte": {
+    name: "Svelte",
+    iconURL: generateIconURL("lib.svelte")
+  },
   "db.MySQL": {
     name: "MySQL",
     iconURL: generateIconURL("db.mysql")
@@ -71,9 +87,21 @@ export const Config = {
     name: "Redis",
     iconURL: generateIconURL("db.redis")
   },
+  "tool.Keycloak": {
+    name: "Keycloak",
+    iconURL: generateIconURL("tool.keycloak")
+  },
   "tool.Sandcastle": {
     name: "Sandcastle",
     iconURL: generateIconURL("tool.sandcastle")
+  },
+  "tool.Nginx": {
+    name: "Nginx",
+    iconURL: generateIconURL("tool.nginx")
+  },
+  "tool.Docker": {
+    name: "Docker",
+    iconURL: generateIconURL("tool.docker")
   },
   "tool.Github": {
     name: "Github",
@@ -92,6 +120,7 @@ export const selectedTechnologieID: (keyof typeof Config)[] = [
   "lang.CSS",
   "lib.Tailwind",
   "lang.PHP",
+  "tool.Docker",
   "tool.Github",
   "tool.GithubActions"
 ];
