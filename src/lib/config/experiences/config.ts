@@ -17,7 +17,7 @@ export const experiences: Experience[] = [
     date: {
       start: date(12, 2, 2024)
     },
-    technologies: ["lang.C#", "lib.WindowsForm", "db.MySQL", "tool.Sandcastle", "tool.Github"]
+    technologies: ["lang.TypeScript", "lang.NodeJS", "db.PostgreSQL", "db.Redis", "tool.GoogleCloudPlatform", "tool.Github"]
   },
   {
     company: "Seedext",
@@ -33,7 +33,7 @@ export const experiences: Experience[] = [
       start: date(6, 11, 2023),
       end: date(8, 12, 2023)
     },
-    technologies: ["lang.C#", "lib.WindowsForm", "db.MySQL", "tool.Sandcastle", "tool.Github"]
+    technologies: ["lang.TypeScript", "lang.NodeJS", "db.PostgreSQL", "db.Redis", "tool.GoogleCloudPlatform", "tool.Github"]
   },
   {
     company: "Seedext",
@@ -47,6 +47,6 @@ export const experiences: Experience[] = [
       start: date(17, 7, 2023),
       end: date(18, 8, 2023)
     },
-    technologies: ["lang.NodeJS"]
+    technologies: ["lang.Golang", "db.PostgreSQL", "tool.GoogleCloudPlatform", "tool.Github"]
   }
 ];
