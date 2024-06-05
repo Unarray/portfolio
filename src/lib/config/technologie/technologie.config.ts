@@ -3,6 +3,10 @@ import type { Technologie, TechnologieID } from "./technologie.type";
 
 
 export const Config = {
+  "lang.Golang": {
+    name: "Golang",
+    iconURL: generateIconURL("lang.golang")
+  },
   "lang.JavaScript": {
     name: "JavaScript",
     iconURL: generateIconURL("lang.javascript")
@@ -106,6 +110,10 @@ export const Config = {
   "tool.Github": {
     name: "Github",
     iconURL: generateIconURL("tool.github")
+  },
+  "tool.GoogleCloudPlatform": {
+    name: "Google Cloud Platform (GCP)",
+    iconURL: generateIconURL("tool.gcp")
   }
 } as const satisfies Record<TechnologieID, Technologie>;
 
