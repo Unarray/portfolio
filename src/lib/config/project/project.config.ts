@@ -4,6 +4,7 @@ import type { Project } from "./project.type";
 
 export const projects = [
   {
+    show: false,
     name: "MediaTek86 Formations - Atelier pro CNED",
     description: "Application Symfony permettant de gérer de visualiser et gérer les différentes formations",
     date: {
@@ -25,6 +26,7 @@ export const projects = [
     technologies: ["lang.PHP", "lib.Symfony", "tool.Keycloak", "db.MySQL", "tool.Github", "tool.GithubActions", "tool.Docker", "tool.Nginx"]
   },
   {
+    show: false,
     name: "MediaTek86 - Atelier pro CNED",
     description: "Application windows permettant de gérer le personnel d'une médiathèque et les absences relatives aux personnels",
     date: {
@@ -44,6 +46,7 @@ export const projects = [
     technologies: ["lang.C#", "lib.WindowsForm", "db.MySQL", "tool.Sandcastle", "tool.Github"]
   },
   {
+    show: true,
     name: "Portfolio",
     description: "Mon portfolio créer avec Svelte",
     date: {
@@ -61,6 +64,7 @@ export const projects = [
     technologies: ["lang.NodeJS", "lang.TypeScript", "lib.Svelte", "lib.ThreeJS", "lib.Tailwind", "tool.Github", "tool.GithubActions"]
   },
   {
+    show: true,
     name: "File Tree Generator",
     description: "Plugin pour l'outil de prise de note Obsidian permettant de générer des arborescences de fichier en utilisant la fonctionnalité `callout` de l'application",
     date: {
@@ -79,6 +83,7 @@ export const projects = [
     technologies: ["lang.NodeJS", "lang.TypeScript", "lib.Electron", "tool.Github", "tool.GithubActions"]
   },
   {
+    show: true,
     name: "Tintify",
     description: "Librairie NPM permettant d'ajouter des effets et couleurs dans le terminal",
     date: {
@@ -98,6 +103,7 @@ export const projects = [
     technologies: ["lang.NodeJS", "lang.TypeScript", "lib.Vitest", "tool.NPM"]
   },
   {
+    show: true,
     name: "Virtual Royaume",
     description: "Communauté de developpeurs",
     date: {

@@ -5,6 +5,22 @@ import { ContractType } from "./const";
 export const experiences: Experience[] = [
   {
     company: "Seedext",
+    contract: ContractType.cdi,
+    position: "développeur back-end",
+    description: [
+      "Développement continu d'un backend NodeJS",
+      "- Création de nouvelle fonctionnalités",
+      "- Maintenance de fonctionnalités",
+      "- Review de code et sessions de par coding",
+      "- Initiateur de certain choix techniques"
+    ],
+    date: {
+      start: date(19, 8, 2024)
+    },
+    technologies: ["lang.TypeScript", "lang.NodeJS", "db.PostgreSQL", "db.Redis", "tool.GoogleCloudPlatform", "tool.Github"]
+  },
+  {
+    company: "Seedext",
     contract: ContractType.cdd,
     position: "développeur back-end",
     description: [
@@ -15,7 +31,8 @@ export const experiences: Experience[] = [
       "- Initiateur de certain choix techniques"
     ],
     date: {
-      start: date(12, 2, 2024)
+      start: date(12, 2, 2024),
+      end: date(11, 8, 2024)
     },
     technologies: ["lang.TypeScript", "lang.NodeJS", "db.PostgreSQL", "db.Redis", "tool.GoogleCloudPlatform", "tool.Github"]
   },

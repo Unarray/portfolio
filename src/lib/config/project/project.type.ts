@@ -3,6 +3,7 @@ import type { ProjectType } from "./project.const";
 import type { Dayjs } from "dayjs";
 
 export type Project = {
+  show: boolean;
   name: string;
   description: string;
   date: {

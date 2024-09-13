@@ -8,7 +8,9 @@
 
   <div class="mx-auto grid grid-cols-1 w-fit gap-2">
     {#each projects as project}
-      <ProjectCard {project} />
+      {#if project.show === true}
+        <ProjectCard {project} />
+      {/if}
     {/each}
   </div>
 </section>
