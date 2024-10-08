@@ -4,6 +4,10 @@ import type { DayJS } from "$lib/utils/day-js";
 export type PersonalDataConfig = {
   firstname: string;
   lastname: string;
+  company?: {
+    name: string;
+    position: string;
+  };
   position: string;
   description: string[];
   birthday: DayJS;

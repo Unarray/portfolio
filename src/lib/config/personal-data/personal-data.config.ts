@@ -7,6 +7,10 @@ const birthday = date(24, 9, 2003);
 export const personalData = {
   firstname: "Ethan",
   lastname: "Monjal",
+  company: {
+    name: "Seedext",
+    position: "Développeur backend"
+  },
   position: "Développeur Back-end",
   description: [
     `de ${dayJS().diff(birthday, "years")} ans passioné par l'informatique en général.`,

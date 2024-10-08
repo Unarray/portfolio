@@ -31,12 +31,14 @@
         <p class="text-lg font-extralight text-gray">{paragraph}</p>
       {/each}
       <div class="mt-5 flex items-center justify-start gap-4 flex-wrap">
-        <Link target="/resources/cv.pdf" blankTarget={true}>
-          <Button class="w-fit flex justify-around items-center gap-2">
-            <IconDownload class="h-5"/>
-            <Text>Télécharger CV</Text>
-          </Button>
-        </Link>
+        {#if personalData.company === undefined}
+          <Link target="/resources/cv.pdf" blankTarget={true}>
+            <Button class="w-fit flex justify-around items-center gap-2">
+              <IconDownload class="h-5"/>
+              <Text>Télécharger CV</Text>
+            </Button>
+          </Link>
+        {/if}
         <Link target={personalData.socials.github.link} blankTarget={true}>
           <Button class="w-fit flex justify-around items-center gap-2">
             <IconBrandGithub class="h-5"/>
